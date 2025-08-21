@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>PinturasZonaSur — Inicio</title>
+		<!-- Tailwind CDN (rápido para prototipo) -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			/* Fondo usando la imagen local */
+			.hero-bg {
+				background-image: url("./Pintura vertical de fachada exterior con esmalte al agua.jpg");
+				background-position: center right;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body class="antialiased text-gray-800">
+
+			<!-- NAVBAR -->
+			<header class="fixed top-0 left-0 w-full z-40 bg-transparent md:bg-white md:border-b md:border-gray-200 transform transition-transform duration-300">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<nav class="flex items-center justify-between h-12 md:h-12">
+						<div class="flex items-center">
+							<a href="#" class="text-xl md:text-lg font-semibold">PinturasZonaSur</a>
+						</div>
+
+						<!-- desktop links -->
+						<div class="hidden md:flex space-x-6 md:space-x-4 items-center text-sm md:text-xs">
+							<a href="#" class="text-gray-600 hover:text-gray-900">Link-1</a>
+							<a href="#" class="text-gray-600 hover:text-gray-900">Link-2</a>
+							<a href="#" class="text-gray-600 hover:text-gray-900">Link-3</a>
+							<a href="#" class="text-gray-600 hover:text-gray-900">Link-4</a>
+							<a href="#" class="text-gray-600 hover:text-gray-900">Link-5</a>
+						</div>
+
+						<!-- mobile hamburger -->
+									<div class="md:hidden">
+										<button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md text-white bg-black/30 hover:bg-black/40 transition-all duration-200 shadow-lg">
+											<span class="sr-only">Abrir menú</span>
+											<!-- hamburger icon -->
+											<svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+											</svg>
+											<!-- close icon (hidden by default) -->
+											<svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+											</svg>
+										</button>
+									</div>
+					</nav>
+
+							<!-- mobile menu (animated) -->
+							<div id="mobile-menu" class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 md:hidden">
+								<div class="pt-2 pb-4 px-4 flex flex-col space-y-2 bg-white/95 shadow-md rounded-b">
+									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-1</a>
+									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-2</a>
+									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-3</a>
+									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-4</a>
+									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-5</a>
+								</div>
+							</div>
+				</div>
+			</header>
+
+		<!-- HERO -->
+		<main>
+			<section class="hero-bg min-h-[80vh] md:min-h-screen relative">
+				<!-- overlay -->
+				<div class="absolute inset-0 bg-black/50"></div>
+
+				<div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+						<div class="text-left text-white max-w-2xl">
+							<h1 class="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold leading-tight drop-shadow-md">
+								Pintura de Edificios, Fachadas y Pisos |
+								Trabajos en Altura y Demarcaciones Viales
+								con Pintura Acrílica
+							</h1>
+
+							<div class="mt-6 text-gray-200 text-[13px] sm:text-sm leading-relaxed drop-shadow-sm">
+								<p>
+									En Pinturas Zona Sur, ofrecemos soluciones de pintado para todo tipo de superficies.
+								</p>
+
+								<p class="mt-2">
+									Contamos con amplia experiencia en pintado de edificios y fachadas para instituciones públicas y privadas, mantenimiento de pintura en interiores y exteriores, aplicación en pisos industriales y demarcaciones viales en acrílico, garantizando seguridad, eficiencia y resultados de alta calidad gracias a nuestro equipo especializado.
+								</p>
+
+								<p class="mt-2">
+									Además, realizamos la aplicación de diferentes tipos de pintura y recubrimientos según la necesidad de cada proyecto:
+								</p>
+
+								<ul class="mt-2 list-disc list-inside space-y-0.5">
+									<li>Pintura epóxica bicomponente ideal para pisos industriales y de alto tránsito.</li>
+									<li>Pintura de poliuretano bicomponente de alto brillo, resistente y duradera.</li>
+									<li>Aplicación de mata polvo para estacionamientos y pisos (a base solvente y al agua) de alto tráfico.</li>
+									<li>Pintura esmalte al agua y látex recomendada para interiores y exteriores.</li>
+									<li>Pinturas con esmalte sintético de acabado brillante y profesional.</li>
+								</ul>
+
+								<p class="mt-2">
+									Ya sea que busques renovar la imagen de tus muros, casas, edificios o fachadas, aplicar recubrimientos para estacionamientos o señalizar espacios viales, somos tu mejor opción en trabajos de pintura profesional.
+								</p>
+							</div>
+							<div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+								<a href="#" class="block w-full sm:w-auto text-center bg-sky-500 hover:bg-sky-600 text-white font-medium px-4 sm:px-5 py-3 rounded shadow text-sm sm:text-base">consulta por whatsapp</a>
+								<a href="#" class="block w-full sm:w-auto text-center bg-white text-gray-800 font-medium px-4 sm:px-5 py-3 rounded shadow text-sm sm:text-base">portafolio</a>
+							</div>
+						</div>
+
+						<!-- espacio derecho vacío (imagen está en el fondo alineada a la derecha) -->
+						<div class="hidden md:block"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+			<script>
+				// Toggle simple para el menú móvil
+						(function(){
+							const btn = document.getElementById('menu-btn');
+							const menu = document.getElementById('mobile-menu');
+							const iconOpen = document.getElementById('icon-open');
+							const iconClose = document.getElementById('icon-close');
+							if(!btn || !menu) return;
+
+							function openMenu(){
+								menu.style.maxHeight = menu.scrollHeight + 'px';
+								menu.classList.remove('opacity-0');
+								menu.classList.add('opacity-100');
+								btn.setAttribute('aria-expanded', 'true');
+								iconOpen.classList.add('hidden');
+								iconClose.classList.remove('hidden');
+								btn.classList.remove('bg-black/30');
+								btn.classList.add('bg-white/80', 'text-black');
+							}
+
+							function closeMenu(){
+								menu.style.maxHeight = '0px';
+								menu.classList.remove('opacity-100');
+								menu.classList.add('opacity-0');
+								btn.setAttribute('aria-expanded', 'false');
+								iconOpen.classList.remove('hidden');
+								iconClose.classList.add('hidden');
+								btn.classList.remove('bg-white/80', 'text-black');
+								btn.classList.add('bg-black/30');
+							}
+
+							// inicial
+							closeMenu();
+
+							btn.addEventListener('click', function(e){
+								e.stopPropagation();
+								const opened = btn.getAttribute('aria-expanded') === 'true';
+								if(opened) closeMenu(); else openMenu();
+							});
+
+							// cerrar al hacer clic fuera
+							document.addEventListener('click', function(e){
+								const path = e.composedPath ? e.composedPath() : (e.path || []);
+								const within = path.includes(menu) || path.includes(btn);
+								if(!within) closeMenu();
+							});
+							// ajustar maxHeight al redimensionar
+							window.addEventListener('resize', function(){
+								if(btn.getAttribute('aria-expanded') === 'true'){
+									menu.style.maxHeight = menu.scrollHeight + 'px';
+								}
+							});
+						})();
+
+						// Hide/show header on scroll
+						(function(){
+							const header = document.querySelector('header');
+							let last = window.scrollY;
+							let ticking = false;
+							function onScroll(){
+								const current = window.scrollY;
+								if(current > last && current > 100){
+									// scrolling down
+									header.style.transform = 'translateY(-110%)';
+								} else {
+									// scrolling up
+									header.style.transform = 'translateY(0)';
+								}
+								last = current <= 0 ? 0 : current;
+								ticking = false;
+							}
+							window.addEventListener('scroll', function(){
+								if(!ticking){
+									window.requestAnimationFrame(onScroll);
+									ticking = true;
+								}
+							});
+						})();
+			</script>
+
+		</body>
+</html>
+
