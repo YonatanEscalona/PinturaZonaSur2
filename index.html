@@ -1,20 +1,29 @@
 <!doctype html>
 <html lang="es">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>PinturasZonaSur — Inicio</title>
-		<!-- Tailwind CDN (rápido para prototipo) -->
-		<script src="https://cdn.tailwindcss.com"></script>
-		<style>
-			/* Fondo usando la imagen local */
-			.hero-bg {
-				background-image: url("./Pintura vertical de fachada exterior con esmalte al agua.jpg");
-				background-position: center right;
-				background-size: cover;
-			}
-		</style>
-	</head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PinturasZonaSur — Inicio</title>
+        <!-- Tailwind CDN (rápido para prototipo) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Fondo usando la imagen local */
+            .hero-bg {
+                background-image: url("./Pintura vertical de fachada exterior con esmalte al agua.jpg");
+                background-position: center right;
+                background-size: cover;
+            }
+
+            /* Móvil: mover la imagen más a la izquierda (ajusta el % si quieres más/menos) */
+            @media (max-width: 767px) {
+                .hero-bg {
+                    background-position: 50% center;
+                }
+            }
+        </style>
+
+
+    </head>
 	<body class="antialiased text-gray-800">
 
 			<!-- NAVBAR -->
@@ -27,19 +36,22 @@
 
 						<!-- desktop links -->
 						<div class="hidden md:flex space-x-6 md:space-x-4 items-center text-sm md:text-xs">
-							<a href="#" class="text-gray-600 hover:text-gray-900">Link-1</a>
-							<a href="#" class="text-gray-600 hover:text-gray-900">Link-2</a>
-							<a href="#" class="text-gray-600 hover:text-gray-900">Link-3</a>
-							<a href="#" class="text-gray-600 hover:text-gray-900">Link-4</a>
-							<a href="#" class="text-gray-600 hover:text-gray-900">Link-5</a>
-						</div>
-
-						<!-- mobile hamburger -->
-									<div class="md:hidden">
-										<button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md text-white bg-black/30 hover:bg-black/40 transition-all duration-200 shadow-lg">
-											<span class="sr-only">Abrir menú</span>
-											<!-- hamburger icon -->
-											<svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <a href="#index" class="text-gray-600 hover:text-gray-900">Inicio</a>
+                            <!-- Enlace a otra página -->
+                            <a href="#SERVICIOS" class="text-gray-600 hover:text-gray-900">Servicios</a>
+                            <!-- Enlace a sección interna (same page) -->
+                            <a href="#projects" class="text-gray-600 hover:text-gray-900">Proyectos</a>
+                            <!-- Enlace externo -->
+                            <a href="https://example.com" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-900">Blog</a>
+                            <a href="contacto.html" class="text-gray-600 hover:text-gray-900">Contacto</a>
+                        </div>
+                        
+                        <!-- mobile hamburger -->
+                                    <div class="md:hidden">
+                                        <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md text-white bg-black/30 hover:bg-black/40 transition-all duration-200 shadow-lg">
+                                            <span class="sr-only">Abrir menú</span>
+                                            <!-- hamburger icon -->
+                                            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 											</svg>
 											<!-- close icon (hidden by default) -->
@@ -52,14 +64,14 @@
 
 							<!-- mobile menu (animated) -->
 							<div id="mobile-menu" class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 md:hidden">
-								<div class="pt-2 pb-4 px-4 flex flex-col space-y-2 bg-white/95 shadow-md rounded-b">
-									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-1</a>
-									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-2</a>
-									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-3</a>
-									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-4</a>
-									<a href="#" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Link-5</a>
-								</div>
-							</div>
+                                <div class="pt-2 pb-4 px-4 flex flex-col space-y-2 bg-white/95 shadow-md rounded-b">
+                                    <a href="index.html" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Inicio</a>
+                                    <a href="servicios.html" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Servicios</a>
+                                    <a href="#projects" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Proyectos</a>
+                                    <a href="contacto.html" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Contacto</a>
+                                    <a href="https://example.com" target="_blank" rel="noopener" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Blog</a>
+                                </div>
+                            </div>
 				</div>
 			</header>
 
@@ -75,29 +87,26 @@
 							<h1 class="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold leading-tight drop-shadow-md">
 								Pintura de Edificios, Fachadas y Pisos |
 								Trabajos en Altura y Demarcaciones Viales
-								con Pintura Acrílica
+								y Pisos
 							</h1>
 
 							<div class="mt-6 text-gray-200 text-[13px] sm:text-sm leading-relaxed drop-shadow-sm">
-                                <p class="font-semibold">Pinturas Zona Sur: Pintura Profesional y Recubrimientos</p>
+                                <p class="font-semibold">Pinturas Zona Sur — Pintura profesional y recubrimientos</p>
 
                                 <p class="mt-2">
-                                    En Pinturas Zona Sur ofrecemos soluciones profesionales de pintado para todo tipo de superficies. Contamos con experiencia en edificios y fachadas, mantenimiento de interiores y exteriores, pisos industriales y demarcaciones viales en acrílico, garantizando calidad, seguridad y eficiencia.
+                                    Servicios especializados en pintura de fachadas, edificios y Calidad, seguridad y acabados duraderos; atención rápida y presupuesto profesional.
                                 </p>
 
-                                <p class="mt-2 font-medium">Servicios:</p>
+                                <p class="mt-3 font-medium">Servicios destacados:</p>
 
                                 <ul class="mt-2 list-disc list-inside space-y-0.5 text-gray-200">
-                                    <li>Pintura epóxica bicomponente para pisos de alto tránsito.</li>
-                                    <li>Pintura poliuretano bicomponente de alto brillo y resistencia.</li>
-                                    <li>Aplicación de mata polvo para estacionamientos y pisos de tráfico intenso.</li>
-                                    <li>Pintura esmalte al agua y látex para interiores y exteriores.</li>
-                                    <li>Esmalte sintético brillante de acabado profesional.</li>
+                                    <li>Pintura de muros y fachadas</li>
+                                    <li>Pintado de edificios y casas</li>
+                                    <li>Demarcación vial</li>
+                                    <li>Demarcación de pisos y estacionamientos</li>
                                 </ul>
 
-                                <p class="mt-2">
-                                    Renueva muros, casas, edificios, fachadas o señaliza espacios viales con nuestros expertos en pintura profesional.
-                                </p>
+                                <p class="mt-3">Contacta para presupuesto y visita técnica. Pintura profesional, fachadas, demarcación vial y recubrimientos industriales.</p>
                             </div>
 							<div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
 								<a href="#" class="block w-full sm:w-auto text-center bg-sky-500 hover:bg-sky-600 text-white font-medium px-4 sm:px-5 py-3 rounded shadow text-sm sm:text-base">consulta por whatsapp</a>
@@ -112,7 +121,7 @@
 			</section>
 			
 			<!-- NUESTRAS SERVICIOS (añadido debajo del hero) -->
-            <section class="bg-white py-20">
+            <section class="bg-white py-20" id="SERVICIOS">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
                     <div class="text-center">
                         <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight">
@@ -124,8 +133,8 @@
                     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
                         <!-- Card 1 -->
                         <article class="space-y-4">
-                            <img src="Pintado con operadores verticales.png" alt="Trabajos en altura" class="w-full h-52 object-cover rounded shadow-sm">
-                            <p class="text-sky-400 text-sm font-medium">cuidad</p>
+                            <img src="vertical.jpeg" alt="Trabajos en altura" class="w-full h-52 object-cover rounded shadow-sm">
+                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado con operadores verticales</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
                                 Realizamos trabajos en altura con especialistas en técnicas de acceso mediante cuerdas, garantizando seguridad y eficiencia en cada proyecto. Nuestros operadores verticales permiten pintar fachadas y estructuras de difícil acceso sin andamios.
@@ -135,7 +144,7 @@
                         <!-- Card 2 -->
                         <article class="space-y-4">
                             <img src="Pintado con MáquinasAlzaHombre.png" alt="Alza hombre" class="w-full h-52 object-cover rounded shadow-sm">
-                            <p class="text-sky-400 text-sm font-medium">Cuidad</p>
+                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado con Máquinas Alza Hombre</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
                                 Optimizamos el trabajo en altura con equipos de elevación modernos que garantizan seguridad, rapidez y precisión. Ideal para proyectos donde la productividad y la seguridad son prioritarias.
@@ -144,17 +153,103 @@
 
                         <!-- Card 3 -->
                         <article class="space-y-4">
-                            <img src="pintadofachada.png" alt="Pintado de fachadas" class="w-full h-52 object-cover rounded shadow-sm">
-                            <p class="text-sky-400 text-sm font-medium">Cuidad</p>
+                            <img src="fachada.jpeg" alt="Pintado de fachadas" class="w-full h-52 object-cover rounded shadow-sm">
+                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado de Fachadas</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
                                 Renueva la apariencia de tu edificio o vivienda con un acabado profesional y duradero. Uso de materiales de alta calidad y técnicas especializadas para proteger contra humedad y desgaste.
                             </p>
                         </article>
+
+                        <!-- Card 4: Recubrimientos y Demarcación Vial -->
+                       <!-- Card: Demarcación y Pintado de Pisos -->
+<article class="space-y-4">
+    <img src="Demarcación de estacionamientos.jpg" alt="Demarcación y pintado de pisos" class="w-full h-52 object-cover rounded shadow-sm">
+    <p class="text-sky-400 text-sm font-medium">Servicios</p>
+    <h3 class="text-lg font-semibold text-gray-900">Demarcación y pintado de pisos</h3>
+    <p class="text-gray-600 text-sm leading-relaxed">
+        Para demarcación de pisos utilizamos pintura acrílica vial.  
+        Para el pintado de pisos y estacionamientos aplicamos epóxica bicomponente y pintura para tránsito vehicular, garantizando durabilidad, resistencia y acabado profesional.
+    </p>
+</article>
+
                     </div>
                 </div>
             </section>
-		</main>
+
+            <!-- PROYECTOS QUE NOS ENORGULLECEN (cards + slider automático) -->
+            <section id="projects" class="bg-gray-50 py-20">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight">
+                            <span class="block text-black">Proyectos que nos</span>
+                            <span class="block text-sky-400">enorgullecen</span>
+                        </h2>
+                        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                            Revisa el antes y el después en obras reales.
+                        </p>
+                    </div>
+
+					
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md p-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 1</h3>
+                <div class="relative">
+                    <img src="pinturaedificioantes.jpg" alt="Antes" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-1">
+                    <img src="pinturadeedificiodespues.jpg" alt="Después" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-1-after">
+                </div>
+                <div class="flex justify-center mt-4 gap-4">
+                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(1)">Antes</button>
+                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(1)">Después</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md p-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 2</h3>
+                <div class="relative">
+                    <img src="antes.jpeg" alt="Antes" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-2">
+                    <img src="despues.jpeg" alt="Después" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-2-after">
+                </div>
+                <div class="flex justify-center mt-4 gap-4">
+                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(2)">Antes</button>
+                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(2)">Después</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md p-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 3</h3>
+                <div class="relative">
+                    <img src="fachadaantes.jpg" alt="Antes" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-3">
+                    <img src="fachadadespues.jpg" alt="Después" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-3-after">
+                </div>
+                <div class="flex justify-center mt-4 gap-4">
+                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(3)">Antes</button>
+                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(3)">Después</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                           
+            </section>
+
+
+<script>
+    // JavaScript para alternar las imágenes
+    function showBefore(id) {
+        document.getElementById(`image-${id}`).classList.remove('hidden');
+        document.getElementById(`image-${id}-after`).classList.add('hidden');
+    }
+
+    function showAfter(id) {
+        document.getElementById(`image-${id}`).classList.add('hidden');
+        document.getElementById(`image-${id}-after`).classList.remove('hidden');
+    }
+</script>
 
 			<script>
 				// Toggle simple para el menú móvil
@@ -235,6 +330,10 @@
 							});
 						})();
 			</script>
+
+
+
+            
 
 		</body>
 </html>
