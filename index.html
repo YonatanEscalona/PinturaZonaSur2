@@ -3,39 +3,104 @@
 	<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <!-- Preload de recursos críticos -->
+        <link rel="preload" href="./src/output.css" as="style">
+        <link rel="preload" href="./Pintura vertical de fachada exterior con esmalte al agua.webp" as="image">
+        
+        <!-- DNS prefetch para recursos externos -->
+        <link rel="dns-prefetch" href="//wa.me">
+        <link rel="dns-prefetch" href="//www.instagram.com">
+        
         <link rel="stylesheet" href="./src/output.css">
         <title>PinturasZonaSur | Pintura Profesional para Edificios, Fachadas y Pisos en Chile</title>
         <meta name="description" content="PinturasZonaSur ofrece servicios de pintura profesional para edificios, fachadas y pisos en Chile. Más de 10 años de experiencia garantizando calidad y resultados duraderos.">
+        
         <!-- Open Graph / Facebook -->
-<meta property="og:title" content="PinturasZonaSur | Pintura Profesional para Edificios, Fachadas y Pisos en Chile">
-<meta property="og:description" content="Más de 10 años de experiencia en pintura profesional. Contáctanos para fachadas, edificios y pisos.">
-<meta property="og:image" content="https://pinturaszonasur.cl/imgoptmizada/pintura-fachada.webp">
-<meta property="og:url" content="https://pinturaszonasur.cl">
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="google-site-verification" content="c0hPrS45AhrDT-bD18UgdSo75NTtbWNbgFmLrtiVoyU" />
-
+        <meta property="og:title" content="PinturasZonaSur | Pintura Profesional para Edificios, Fachadas y Pisos en Chile">
+        <meta property="og:description" content="Más de 10 años de experiencia en pintura profesional. Contáctanos para fachadas, edificios y pisos.">
+        <meta property="og:image" content="https://pinturaszonasur.cl/imgoptmizada/pintura-fachada.webp">
+        <meta property="og:url" content="https://pinturaszonasur.cl">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="PinturasZonaSur">
+        <meta property="og:locale" content="es_CL">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Pintura profesional de fachadas y edificios en Chile">
+        
+        <!-- Instagram Open Graph -->
+        <meta property="og:image:secure_url" content="https://pinturaszonasur.cl/imgoptmizada/pintura-fachada.webp">
+        <meta property="og:image:type" content="image/webp">
+        
+        <!-- WhatsApp Business -->
+        <meta property="og:phone_number" content="+56986472644">
+        <meta property="og:email" content="contacto@pinturaszonasur.cl">
+        
+        <!-- Business Information -->
+        <meta property="business:contact_data:street_address" content="Servicio a domicilio">
+        <meta property="business:contact_data:locality" content="Angol">
+        <meta property="business:contact_data:region" content="La Araucanía">
+        <meta property="business:contact_data:country_name" content="Chile">
+        <meta property="business:contact_data:phone_number" content="+56986472644">
+        
+        <!-- Additional SEO Meta Tags -->
+        <meta name="keywords" content="pintura profesional, fachadas, edificios, pisos, Chile, Angol, Los Ángeles, trabajos en altura, demarcación vial, recubrimientos">
+        <meta name="author" content="PinturasZonaSur">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="googlebot" content="index, follow">
+        
+        <!-- Mobile Optimization -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="PinturasZonaSur">
+        
+        <!-- Theme and Colors -->
+        <meta name="theme-color" content="#0ea5e9">
+        <meta name="msapplication-TileColor" content="#0ea5e9">
+        <meta name="msapplication-navbutton-color" content="#0ea5e9">
+        <meta name="google-site-verification" content="c0hPrS45AhrDT-bD18UgdSo75NTtbWNbgFmLrtiVoyU" />
         <link rel="canonical" href="https://pinturaszonasur.cl">
         <meta property="og:locale" content="es_CL">
 
+        <!-- Estilos críticos inline para mejor rendimiento -->
         <style>
-            /* Fondo usando la imagen local */
+            /* Estilos críticos para el hero */
             .hero-bg {
                 background-image: url("./Pintura\ vertical\ de\ fachada\ exterior\ con\ esmalte\ al\ agua.webp");
                 background-position: center right;
                 background-size: cover;
+                background-repeat: no-repeat;
             }
 
-            /* Móvil: mover la imagen más a la izquierda (ajusta el % si quieres más/menos) */
             @media (max-width: 767px) {
                 .hero-bg {
                     background-position: 50% center;
                 }
             }
+            
+            /* Estilos para lazy loading */
+            .lazy-image {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            
+            .lazy-image.loaded {
+                opacity: 1;
+            }
+            
+            /* Skeleton loading */
+            .skeleton {
+                background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+                background-size: 200% 100%;
+                animation: loading 1.5s infinite;
+            }
+            
+            @keyframes loading {
+                0% { background-position: 200% 0; }
+                100% { background-position: -200% 0; }
+            }
         </style>
-
-
     </head>
 	<body class="antialiased text-gray-800">
 
@@ -153,7 +218,11 @@
                     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
                         <!-- Card 1 -->
                         <article class="space-y-4">
-                            <img src="vertical.webp" alt="Pintura profesional en altura con operadores verticales en Chile" class="w-full h-52 object-cover rounded shadow-sm">
+                            <img src="vertical.webp" alt="Pintura profesional en altura con operadores verticales en Chile" 
+                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
+                                 loading="lazy" 
+                                 decoding="async"
+                                 onload="this.classList.add('loaded')">
                             <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado con operadores verticales</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
@@ -163,7 +232,11 @@
 
                         <!-- Card 2 -->
                         <article class="space-y-4">
-                            <img src="fachadadespues.webp" alt="Pintura en altura con máquinas alza hombre para fachadas y edificios" class="w-full h-52 object-cover rounded shadow-sm">
+                            <img src="fachadadespues.webp" alt="Pintura en altura con máquinas alza hombre para fachadas y edificios" 
+                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
+                                 loading="lazy" 
+                                 decoding="async"
+                                 onload="this.classList.add('loaded')">
                             <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado con Máquinas Alza Hombre</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
@@ -173,7 +246,11 @@
 
                         <!-- Card 3 -->
                         <article class="space-y-4">
-                            <img src="fachada.webp" alt="Pintura de fachadas de edificios y viviendas con acabados duraderos" class="w-full h-52 object-cover rounded shadow-sm">
+                            <img src="fachada.webp" alt="Pintura de fachadas de edificios y viviendas con acabados duraderos" 
+                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
+                                 loading="lazy" 
+                                 decoding="async"
+                                 onload="this.classList.add('loaded')">
                             <p class="text-sky-400 text-sm font-medium">Servicios</p>
                             <h3 class="text-lg font-semibold text-gray-900">Pintado de Fachadas</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">
@@ -181,17 +258,20 @@
                             </p>
                         </article>
 
-                        <!-- Card 4: Recubrimientos y Demarcación Vial -->
-                       <!-- Card: Demarcación y Pintado de Pisos -->
-<article class="space-y-4">
-    <img src="Demarcación de estacionamientos.webp" alt="Demarcación vial y pintado de pisos en estacionamientos" class="w-full h-52 object-cover rounded shadow-sm">
-    <p class="text-sky-400 text-sm font-medium">Servicios</p>
-    <h3 class="text-lg font-semibold text-gray-900">Demarcación y pintado de pisos</h3>
-    <p class="text-gray-600 text-sm leading-relaxed">
-        Para demarcación de pisos utilizamos pintura acrílica vial.  
-        Para el pintado de pisos y estacionamientos aplicamos epóxica bicomponente y pintura para tránsito vehicular, garantizando durabilidad, resistencia y acabado profesional.
-    </p>
-</article>
+                        <!-- Card 4: Demarcación y Pintado de Pisos -->
+                        <article class="space-y-4">
+                            <img src="Demarcación de estacionamientos.webp" alt="Demarcación vial y pintado de pisos en estacionamientos" 
+                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
+                                 loading="lazy" 
+                                 decoding="async"
+                                 onload="this.classList.add('loaded')">
+                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
+                            <h3 class="text-lg font-semibold text-gray-900">Demarcación y pintado de pisos</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Para demarcación de pisos utilizamos pintura acrílica vial.  
+                                Para el pintado de pisos y estacionamientos aplicamos epóxica bicomponente y pintura para tránsito vehicular, garantizando durabilidad, resistencia y acabado profesional.
+                            </p>
+                        </article>
 
                     </div>
                 </div>
@@ -215,8 +295,18 @@
             <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 1</h3>
                 <div class="relative">
-                    <img src="edificioantes.webp" alt="Antes de la pintura profesional en edificio de altura" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-1">
-                    <img src="edificiodespues.webp" alt="Después de la pintura profesional en edificio de altura" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-1-after">
+                    <img src="edificioantes.webp" alt="Antes de la pintura profesional en edificio de altura" 
+                         class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 lazy-image" 
+                         id="image-1" 
+                         loading="lazy" 
+                         decoding="async"
+                         onload="this.classList.add('loaded')">
+                    <img src="edificiodespues.webp" alt="Después de la pintura profesional en edificio de altura" 
+                         class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden lazy-image" 
+                         id="image-1-after" 
+                         loading="lazy" 
+                         decoding="async"
+                         onload="this.classList.add('loaded')">
                 </div>
                 <div class="flex justify-center mt-4 gap-4">
                     <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(1)">Antes</button>
@@ -320,77 +410,120 @@
 </section>
 					
         <script>
-    // JavaScript para alternar las imágenes
+    // JavaScript optimizado para alternar las imágenes
+    const imageCache = new Map();
+    
     function showBefore(id) {
-        document.getElementById(`image-${id}`).classList.remove('hidden');
-        document.getElementById(`image-${id}-after`).classList.add('hidden');
+        const beforeImg = document.getElementById(`image-${id}`);
+        const afterImg = document.getElementById(`image-${id}-after`);
+        
+        if (beforeImg && afterImg) {
+            beforeImg.classList.remove('hidden');
+            afterImg.classList.add('hidden');
+        }
     }
 
     function showAfter(id) {
-        document.getElementById(`image-${id}`).classList.add('hidden');
-        document.getElementById(`image-${id}-after`).classList.remove('hidden');
+        const beforeImg = document.getElementById(`image-${id}`);
+        const afterImg = document.getElementById(`image-${id}-after`);
+        
+        if (beforeImg && afterImg) {
+            beforeImg.classList.add('hidden');
+            afterImg.classList.remove('hidden');
+        }
     }
+    
+    // Lazy loading avanzado con Intersection Observer
+    function initLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy-image');
+                            img.classList.add('loaded');
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+    
+    // Inicializar lazy loading cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', initLazyLoading);
 </script>
 
 			<script>
-				// Toggle simple para el menú móvil
-						(function () {
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const iconOpen = document.getElementById('icon-open');
-    const iconClose = document.getElementById('icon-close');
+				// JavaScript optimizado para el menú móvil y navegación
+				(function () {
+					const btn = document.getElementById('menu-btn');
+					const menu = document.getElementById('mobile-menu');
+					const iconOpen = document.getElementById('icon-open');
+					const iconClose = document.getElementById('icon-close');
 
-    if (!btn || !menu) return;
+					if (!btn || !menu) return;
 
-    // Alternar el menú móvil
-    btn.addEventListener('click', function () {
-        const isOpen = menu.classList.toggle('hidden'); // Alternar visibilidad del menú
-        menu.style.maxHeight = isOpen ? '0px' : `${menu.scrollHeight}px`; // Ajustar altura
-        menu.classList.toggle('opacity-0', isOpen);
-        menu.classList.toggle('opacity-100', !isOpen);
-        btn.setAttribute('aria-expanded', !isOpen);
-        iconOpen.classList.toggle('hidden', !isOpen);
-        iconClose.classList.toggle('hidden', isOpen);
-    });
+					// Alternar el menú móvil con mejor rendimiento
+					btn.addEventListener('click', function (e) {
+						e.preventDefault();
+						const isOpen = menu.classList.toggle('hidden');
+						menu.style.maxHeight = isOpen ? '0px' : `${menu.scrollHeight}px`;
+						menu.classList.toggle('opacity-0', isOpen);
+						menu.classList.toggle('opacity-100', !isOpen);
+						btn.setAttribute('aria-expanded', !isOpen);
+						iconOpen.classList.toggle('hidden', !isOpen);
+						iconClose.classList.toggle('hidden', isOpen);
+					});
 
-    // Cerrar el menú al hacer clic fuera de él
-    document.addEventListener('click', function (e) {
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.classList.add('hidden');
-            menu.style.maxHeight = '0px';
-            menu.classList.add('opacity-0');
-            menu.classList.remove('opacity-100');
-            btn.setAttribute('aria-expanded', false);
-            iconOpen.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-        }
-    });
-})();
+					// Cerrar el menú al hacer clic fuera de él
+					document.addEventListener('click', function (e) {
+						if (!menu.contains(e.target) && !btn.contains(e.target)) {
+							menu.classList.add('hidden');
+							menu.style.maxHeight = '0px';
+							menu.classList.add('opacity-0');
+							menu.classList.remove('opacity-100');
+							btn.setAttribute('aria-expanded', false);
+							iconOpen.classList.remove('hidden');
+							iconClose.classList.add('hidden');
+						}
+					});
+				})();
 
-						// Hide/show header on scroll
-						(function(){
-							const header = document.querySelector('header');
-							let last = window.scrollY;
-							let ticking = false;
-							function onScroll(){
-								const current = window.scrollY;
-								if(current > last && current > 100){
-									// scrolling down
-									header.style.transform = 'translateY(-110%)';
-								} else {
-									// scrolling up
-									header.style.transform = 'translateY(0)';
-								}
-								last = current <= 0 ? 0 : current;
-								ticking = false;
-							}
-							window.addEventListener('scroll', function(){
-								if(!ticking){
-									window.requestAnimationFrame(onScroll);
-									ticking = true;
-								}
-							});
-						})();
+				// Hide/show header on scroll optimizado
+				(function(){
+					const header = document.querySelector('header');
+					let last = window.scrollY;
+					let ticking = false;
+					
+					function onScroll(){
+						const current = window.scrollY;
+						if(current > last && current > 100){
+							// scrolling down
+							header.style.transform = 'translateY(-110%)';
+						} else {
+							// scrolling up
+							header.style.transform = 'translateY(0)';
+						}
+						last = current <= 0 ? 0 : current;
+						ticking = false;
+					}
+					
+					// Usar throttle para mejor rendimiento
+					window.addEventListener('scroll', function(){
+						if(!ticking){
+							window.requestAnimationFrame(onScroll);
+							ticking = true;
+						}
+					}, { passive: true });
+				})();
 			</script>
 
 <!-- ABOUT US SECTION (NEWLY ADDED) -->
@@ -513,7 +646,7 @@ window.addEventListener('resize', loadMobileScript);
                         </svg>
                     </a>
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/pinturas.zonasur/" target="_blank" class="text-gray-400 hover:text-white">
+                    <a href="https://www.instagram.com/pinturas_zona_sur_/" target="_blank" class="text-gray-400 hover:text-white">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0-2A7.75 7.75 0 0 0 0 7.75v8.5A7.75 7.75 0 0 0 7.75 24h8.5A7.75 7.75 0 0 0 24 16.25v-8.5A7.75 7.75 0 0 0 16.25 0h-8.5zM12 5.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0-2A8.2 8.2 0 1 0 20.2 12 8.2 8.2 0 0 0 12 3.8zm6.4-.2a1.44 1.44 0 1 1-1.44 1.44A1.44 1.44 0 0 1 18.4 3.6z"></path>
                         </svg>
@@ -574,8 +707,7 @@ window.addEventListener('resize', loadMobileScript);
     { "@type": "Place", "name": "Los Ángeles" }
   ],
   "sameAs": [
-    "https://www.instagram.com/pinturas.zonasur/",
-    "https://wa.me/56986472644"
+    "https://www.instagram.com/pinturas_zona_sur_/"
   ]
 }
 </script>
