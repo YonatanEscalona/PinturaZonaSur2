@@ -6,6 +6,7 @@
         <title>PinturasZonaSur — Inicio</title>
         <!-- Tailwind CDN (rápido para prototipo) -->
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="dist/output.css">
         <style>
             /* Fondo usando la imagen local */
             .hero-bg {
@@ -461,7 +462,13 @@
         </div>
     </div>
 </section>
-
+<script>
+if (window.innerWidth < 768) {
+    const script = document.createElement('script');
+    script.src = 'menu.js';
+    document.body.appendChild(script);
+}
+</script>
 		</body>
 </html>
 
