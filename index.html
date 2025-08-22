@@ -318,57 +318,38 @@
 
 			<script>
 				// Toggle simple para el menú móvil
-						(function(){
-							const btn = document.getElementById('menu-btn');
-							const menu = document.getElementById('mobile-menu');
-							const iconOpen = document.getElementById('icon-open');
-							const iconClose = document.getElementById('icon-close');
-							if(!btn || !menu) return;
+						(function () {
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
 
-							function openMenu(){
-								menu.style.maxHeight = menu.scrollHeight + 'px';
-								menu.classList.remove('opacity-0');
-								menu.classList.add('opacity-100');
-								btn.setAttribute('aria-expanded', 'true');
-								iconOpen.classList.add('hidden');
-								iconClose.classList.remove('hidden');
-								btn.classList.remove('bg-black/30');
-								btn.classList.add('bg-white/80', 'text-black');
-							}
+    if (!btn || !menu) return;
 
-							function closeMenu(){
-								menu.style.maxHeight = '0px';
-								menu.classList.remove('opacity-100');
-								menu.classList.add('opacity-0');
-								btn.setAttribute('aria-expanded', 'false');
-								iconOpen.classList.remove('hidden');
-								iconClose.classList.add('hidden');
-								btn.classList.remove('bg-white/80', 'text-black');
-								btn.classList.add('bg-black/30');
-							}
+    // Alternar el menú móvil
+    btn.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('hidden'); // Alternar visibilidad del menú
+        menu.style.maxHeight = isOpen ? '0px' : `${menu.scrollHeight}px`; // Ajustar altura
+        menu.classList.toggle('opacity-0', isOpen);
+        menu.classList.toggle('opacity-100', !isOpen);
+        btn.setAttribute('aria-expanded', !isOpen);
+        iconOpen.classList.toggle('hidden', !isOpen);
+        iconClose.classList.toggle('hidden', isOpen);
+    });
 
-							// inicial
-							closeMenu();
-
-							btn.addEventListener('click', function(e){
-								e.stopPropagation();
-								const opened = btn.getAttribute('aria-expanded') === 'true';
-								if(opened) closeMenu(); else openMenu();
-							});
-
-							// cerrar al hacer clic fuera
-							document.addEventListener('click', function(e){
-								const path = e.composedPath ? e.composedPath() : (e.path || []);
-								const within = path.includes(menu) || path.includes(btn);
-								if(!within) closeMenu();
-							});
-							// ajustar maxHeight al redimensionar
-							window.addEventListener('resize', function(){
-								if(btn.getAttribute('aria-expanded') === 'true'){
-									menu.style.maxHeight = menu.scrollHeight + 'px';
-								}
-							});
-						})();
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function (e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.classList.add('hidden');
+            menu.style.maxHeight = '0px';
+            menu.classList.add('opacity-0');
+            menu.classList.remove('opacity-100');
+            btn.setAttribute('aria-expanded', false);
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        }
+    });
+})();
 
 						// Hide/show header on scroll
 						(function(){
@@ -481,11 +462,15 @@
     </div>
 </section>
 <script>
-if (window.innerWidth < 768) {
-    const script = document.createElement('script');
-    script.src = 'menu.js';
-    document.body.appendChild(script);
+function loadMobileScript() {
+    if (window.innerWidth < 768) {
+        const script = document.createElement('script');
+        script.src = 'menu.js';
+        document.body.appendChild(script);
+    }
 }
+loadMobileScript();
+window.addEventListener('resize', loadMobileScript);
 </script>
 <footer class="bg-gray-800 text-white py-10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
