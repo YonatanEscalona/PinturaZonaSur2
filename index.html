@@ -601,6 +601,32 @@
         </div>
     </div>
 </section>
+
+
+
+// ...existing code...
+<script>
+// Función para enviar mensaje a WhatsApp desde el formulario
+function sendToWhatsApp() {
+    const nombre = document.getElementById('nombre').value;
+    const asunto = document.getElementById('asunto').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+    if (!nombre || !asunto || !mensaje) {
+        alert('Por favor, completa todos los campos');
+        return;
+    }
+    
+    const whatsappMessage = `Hola, mi nombre es ${nombre}.\n\nAsunto: ${asunto}\n\nMensaje: ${mensaje}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/56986472644?text=${encodedMessage}`;
+    
+    window.open(whatsappURL, '_blank');
+}
+
+// ...existing code...
+</script>
+
 <!-- Botones flotantes de redes sociales -->
 <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
     <!-- Botón flotante de Instagram -->
@@ -719,6 +745,9 @@ window.addEventListener('resize', loadMobileScript);
     </a>
 </div>
 
+
+</footer>
+
 <script>
 function loadMobileScript() {
     if (window.innerWidth < 768) {
@@ -730,26 +759,9 @@ function loadMobileScript() {
 loadMobileScript();
 window.addEventListener('resize', loadMobileScript);
 </script>
-<footer class="bg-gray-800 text-white py-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Columna 1: Información de la empresa -->
-            <div>
-                <h3 class="text-lg font-semibold">PinturasZonaSur</h3>
-                <p class="mt-4 text-gray-400 text-sm">
-                    Más de 10 años ofreciendo servicios de pintura profesional para edificios, fachadas, pisos y más. Garantizamos calidad, seguridad y resultados duraderos.
-                </p>
-            </div>
 
-            <!-- Columna 2: Enlaces rápidos -->
-            <div>
-                <h3 class="text-lg font-semibold">Enlaces Rápidos</h3>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#index" class="text-gray-400 hover:text-white text-sm">Inicio</a></li>
-                    <li><a href="#SERVICIOS" class="text-gray-400 hover:text-white text-sm">Servicios</a></li>
-                    <li><a href="#projects" class="text-gray-400 hover:text-white text-sm">Proyectos</a></li>
-                    <li><a href="#contacto" class="text-gray-400 hover:text-white text-sm">Contacto</a></li>
-                </ul>
-            </div>
+        </main>
+    </body>
+</html>
 
             
