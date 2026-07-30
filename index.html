@@ -3,19 +3,22 @@
 	<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         <!-- Preload de recursos críticos -->
-        <link rel="preload" href="./src/output.css" as="style">
-        <link rel="preload" href="./Pintura vertical de fachada exterior con esmalte al agua.webp" as="image">
-        
-        <!-- DNS prefetch para recursos externos -->
+        <link rel="preload" href="./hero-operadores-verticales-v3.webp" as="image" type="image/webp">
+
+        <!-- DNS prefetch / preconnect -->
         <link rel="dns-prefetch" href="//wa.me">
         <link rel="dns-prefetch" href="//www.instagram.com">
-        
-        <link rel="stylesheet" href="./src/output.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Tipografías -->
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
         <title>PinturasZonaSur | Pintura Profesional para Edificios, Fachadas y Pisos en Chile</title>
         <meta name="description" content="PinturasZonaSur ofrece servicios de pintura profesional para edificios, fachadas y pisos en Chile. Más de 10 años de experiencia garantizando calidad y resultados duraderos.">
-        
+
         <!-- Open Graph / Facebook -->
         <meta property="og:title" content="PinturasZonaSur | Pintura Profesional para Edificios, Fachadas y Pisos en Chile">
         <meta property="og:description" content="Más de 10 años de experiencia en pintura profesional. Contáctanos para fachadas, edificios y pisos.">
@@ -27,865 +30,3084 @@
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         <meta property="og:image:alt" content="Pintura profesional de fachadas y edificios en Chile">
-        
+
         <!-- Instagram Open Graph -->
         <meta property="og:image:secure_url" content="https://pinturaszonasur.cl/imgoptmizada/pintura-fachada.webp">
         <meta property="og:image:type" content="image/webp">
-        
+
         <!-- WhatsApp Business -->
         <meta property="og:phone_number" content="+56986472644">
         <meta property="og:email" content="contacto@pinturaszonasur.cl">
-        
+
         <!-- Business Information -->
         <meta property="business:contact_data:street_address" content="Servicio a domicilio">
         <meta property="business:contact_data:locality" content="Angol">
         <meta property="business:contact_data:region" content="La Araucanía">
         <meta property="business:contact_data:country_name" content="Chile">
         <meta property="business:contact_data:phone_number" content="+56986472644">
-        
+
         <!-- Additional SEO Meta Tags -->
         <meta name="keywords" content="pintura profesional, fachadas, edificios, pisos, Chile, Angol, Los Ángeles, trabajos en altura, demarcación vial, recubrimientos">
         <meta name="author" content="PinturasZonaSur">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         <meta name="googlebot" content="index, follow">
-        
+
         <!-- Mobile Optimization -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="PinturasZonaSur">
-        
+
         <!-- Theme and Colors -->
-        <meta name="theme-color" content="#0ea5e9">
-        <meta name="msapplication-TileColor" content="#0ea5e9">
-        <meta name="msapplication-navbutton-color" content="#0ea5e9">
+        <meta name="theme-color" content="#0a1c24">
+        <meta name="msapplication-TileColor" content="#0a1c24">
+        <meta name="msapplication-navbutton-color" content="#0a1c24">
         <meta name="google-site-verification" content="c0hPrS45AhrDT-bD18UgdSo75NTtbWNbgFmLrtiVoyU" />
         <link rel="canonical" href="https://pinturaszonasur.cl">
-        <meta property="og:locale" content="es_CL">
+        <link rel="icon" href="./favicon.ico?v=2" sizes="any">
+        <link rel="icon" href="./favicon-512.png?v=2" type="image/png" sizes="512x512">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=2">
 
-        <!-- Estilos críticos inline para mejor rendimiento -->
-        <style>
-            /* Estilos críticos para el hero */
-            .hero-bg {
-                background-image: url("./Pintura\ vertical\ de\ fachada\ exterior\ con\ esmalte\ al\ agua.webp");
-                background-position: center right;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
+        <!-- Datos estructurados -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HousePainter",
+            "name": "PinturasZonaSur",
+            "url": "https://pinturaszonasur.cl",
+            "telephone": "+56986472644",
+            "email": "contacto@pinturaszonasur.cl",
+            "description": "Pintura profesional de edificios, fachadas y pisos. Trabajos en altura y demarcación vial en la zona sur de Chile.",
+            "areaServed": ["Angol", "Los Ángeles", "La Araucanía", "Biobío", "Chile"],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Angol",
+                "addressRegion": "La Araucanía",
+                "addressCountry": "CL"
+            },
+            "sameAs": ["https://www.instagram.com/pinturas_zona_sur/"]
+        }
+        </script>
 
-            @media (max-width: 767px) {
-                .hero-bg {
-                    background-position: 50% center;
-                }
-            }
-            
-            /* Estilos para lazy loading */
-            .lazy-image {
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            }
-            
-            .lazy-image.loaded {
-                opacity: 1;
-            }
-            
-            /* Skeleton loading */
-            .skeleton {
-                background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-                background-size: 200% 100%;
-                animation: loading 1.5s infinite;
-            }
-            
-            @keyframes loading {
-                0% { background-position: 200% 0; }
-                100% { background-position: -200% 0; }
-            }
-         </style>
+        <style id="pzs-styles">
+/* ============================================================
+   PINTURAS ZONA SUR — Rediseño 2025
+   Sistema de diseño: "Oficio & Precisión"
+   ============================================================ */
+
+/* ---------- Tokens ---------- */
+:root {
+    --ink: #0a1c24;
+    --ink-2: #102832;
+    --ink-3: #173743;
+    --paper: #eef1ed;
+    --paper-2: #dfe5e2;
+    --white: #ffffff;
+    --accent: #087f8c;
+    --accent-dark: #05626d;
+    --accent-soft: rgba(8, 127, 140, 0.12);
+    --wa: #25d366;
+    --wa-dark: #1da851;
+
+    --text: #102129;
+    --text-soft: #5c6869;
+    --text-inv: #f3f7f5;
+    --text-inv-soft: rgba(243, 247, 245, 0.68);
+
+    --line: rgba(10, 28, 36, 0.12);
+    --line-inv: rgba(243, 247, 245, 0.14);
+
+    --font-display: "Archivo", "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+    --radius-s: 10px;
+    --radius-m: 18px;
+    --radius-l: 28px;
+
+    --shadow-1: 0 1px 2px rgba(10, 28, 36, 0.06), 0 8px 24px rgba(10, 28, 36, 0.08);
+    --shadow-2: 0 12px 40px rgba(10, 28, 36, 0.16);
+    --shadow-accent: 0 10px 30px rgba(8, 127, 140, 0.35);
+
+    --nav-h: 76px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; border: 0; background: none; cursor: pointer; color: inherit; }
+input, textarea { font: inherit; }
+
+::selection { background: var(--accent); color: var(--white); }
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.section { padding-block: clamp(72px, 10vw, 130px); }
+
+section[id], header[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+/* ---------- Tipografía ---------- */
+.display {
+    font-family: var(--font-display);
+    font-stretch: 122%;
+    font-weight: 850;
+    letter-spacing: -0.015em;
+    line-height: 0.98;
+    text-transform: uppercase;
+}
+
+.h-section {
+    font-family: var(--font-display);
+    font-stretch: 118%;
+    font-weight: 800;
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.lead { font-size: clamp(1rem, 1.4vw, 1.15rem); color: var(--text-soft); max-width: 56ch; }
+
+.accent { color: var(--accent); }
+
+.sec-head { margin-bottom: clamp(40px, 6vw, 72px); }
+.sec-head .lead { margin-top: 18px; }
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.25s, color 0.25s, border-color 0.25s;
+    will-change: transform;
+}
+
+.btn svg { width: 19px; height: 19px; flex: none; }
+
+.btn-accent {
+    background: var(--accent);
+    color: var(--white);
+    box-shadow: var(--shadow-accent);
+}
+.btn-accent:hover { background: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 16px 38px rgba(8, 127, 140, 0.42); }
+
+.btn-ghost {
+    border: 1.5px solid rgba(244, 241, 234, 0.45);
+    color: var(--text-inv);
+    backdrop-filter: blur(4px);
+}
+.btn-ghost:hover { background: rgba(244, 241, 234, 0.12); border-color: var(--paper); transform: translateY(-3px); }
+
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: var(--ink-3); transform: translateY(-3px); box-shadow: var(--shadow-2); }
+
+.btn-outline-dark { border: 1.5px solid var(--line); color: var(--text); }
+.btn-outline-dark:hover { border-color: var(--ink); transform: translateY(-3px); }
+
+/* ---------- Chips ---------- */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-soft);
+    background: rgba(255, 255, 255, 0.55);
+    transition: border-color 0.25s, color 0.25s, transform 0.3s var(--ease);
+}
+.chip:hover { border-color: var(--accent); color: var(--accent-dark); transform: translateY(-2px); }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    transition: background 0.35s, box-shadow 0.35s, height 0.35s var(--ease), backdrop-filter 0.35s;
+    color: var(--paper);
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.nav.scrolled {
+    height: 64px;
+    background: rgba(7, 23, 30, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 rgba(243, 247, 245, 0.12);
+    color: var(--text-inv);
+}
+
+.brand {
+    display: block;
+    width: clamp(190px, 15vw, 236px);
+    line-height: 0;
+}
+
+.brand-logo { width: 100%; height: auto; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 9px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 999px;
+    opacity: 0.85;
+    transition: opacity 0.2s, background 0.25s;
+}
+.nav-links a:hover { opacity: 1; background: rgba(127, 127, 127, 0.12); }
+.nav-links a.active { opacity: 1; color: var(--accent); }
+.nav.scrolled .nav-links a.active { color: var(--accent-dark); }
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 20px rgba(8, 127, 140, 0.35);
+    transition: transform 0.3s var(--ease), background 0.25s, box-shadow 0.3s;
+    white-space: nowrap;
+}
+.nav-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(8, 127, 140, 0.45); }
+.nav-cta svg { width: 16px; height: 16px; }
+
+/* Hamburguesa */
+.burger {
+    display: none;
+    position: relative;
+    z-index: 140;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    place-items: center;
+}
+.burger svg {
+    width: 27px;
+    height: 27px;
+    transition: opacity 0.25s, transform 0.35s var(--ease);
+}
+.burger .ic-close {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.6);
+}
+body.menu-open .burger .ic-open { opacity: 0; transform: rotate(90deg) scale(0.6); }
+body.menu-open .burger .ic-close { opacity: 1; transform: rotate(0) scale(1); }
+
+/* Menú móvil a pantalla completa */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px clamp(24px, 7vw, 60px) 40px;
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition: clip-path 0.55s var(--ease), visibility 0s 0.55s;
+}
+body.menu-open .mobile-menu {
+    clip-path: inset(0 0 0% 0);
+    visibility: visible;
+    transition: clip-path 0.55s var(--ease), visibility 0s;
+}
+
+.mobile-menu a.m-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-inv);
+    font-family: var(--font-display);
+    font-stretch: 118%;
+    font-weight: 800;
+    font-size: clamp(2rem, 8.5vw, 3.2rem);
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    transform: translateY(24px);
+    opacity: 0;
+    transition: transform 0.5s var(--ease), opacity 0.5s, color 0.25s;
+}
+.mobile-menu a.m-link:hover { color: var(--accent); }
+body.menu-open .mobile-menu a.m-link { transform: translateY(0); opacity: 1; }
+body.menu-open .mobile-menu a.m-link:nth-child(1) { transition-delay: 0.10s; }
+body.menu-open .mobile-menu a.m-link:nth-child(2) { transition-delay: 0.16s; }
+body.menu-open .mobile-menu a.m-link:nth-child(3) { transition-delay: 0.22s; }
+body.menu-open .mobile-menu a.m-link:nth-child(4) { transition-delay: 0.28s; }
+body.menu-open .mobile-menu a.m-link:nth-child(5) { transition-delay: 0.34s; }
+
+.mobile-menu .m-foot {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s 0.4s, transform 0.5s 0.4s var(--ease);
+}
+body.menu-open .mobile-menu .m-foot { opacity: 1; transform: translateY(0); }
+
+body.menu-open { overflow: hidden; }
+body.menu-open .nav {
+    z-index: 130;
+    color: var(--paper);
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--text-inv);
+    overflow: hidden;
+    background: var(--ink);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("./hero-operadores-verticales-v3.webp");
+    background-size: cover;
+    background-position: 68% center;
+    transform: scale(1.06);
+    animation: heroZoom 2.4s var(--ease) forwards;
+}
+
+@keyframes heroZoom { to { transform: scale(1); } }
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(13, 14, 17, 0.94) 0%, rgba(13, 14, 17, 0.45) 42%, rgba(13, 14, 17, 0.25) 68%, rgba(13, 14, 17, 0.55) 100%),
+        linear-gradient(100deg, rgba(13, 14, 17, 0.72) 0%, rgba(13, 14, 17, 0.18) 60%, transparent 100%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: calc(var(--nav-h) + 40px);
+    padding-bottom: clamp(36px, 6vh, 64px);
+}
+
+.hero h1 {
+    font-size: clamp(2.65rem, 7.4vw, 6.2rem);
+    max-width: 12ch;
+}
+
+.hero h1 .row { display: block; overflow: hidden; }
+.hero h1 .row > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: riseUp 1s var(--ease) forwards;
+}
+.hero h1 .row:nth-child(1) > span { animation-delay: 0.15s; }
+.hero h1 .row:nth-child(2) > span { animation-delay: 0.28s; }
+.hero h1 .row:nth-child(3) > span { animation-delay: 0.41s; }
+.hero h1 .row:nth-child(4) > span { animation-delay: 0.54s; }
+
+@keyframes riseUp { to { transform: translateY(0); } }
+
+.hero h1 .period { color: var(--accent); }
+
+.hero-sub {
+    margin-top: clamp(18px, 3vh, 28px);
+    max-width: 58ch;
+    font-size: clamp(0.98rem, 1.5vw, 1.13rem);
+    color: var(--text-inv-soft);
+    opacity: 0;
+    animation: fadeUp 0.9s var(--ease) 0.68s forwards;
+}
+
+.hero-sub strong { color: var(--text-inv); font-weight: 600; }
+
+.hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: clamp(24px, 4vh, 38px);
+    opacity: 0;
+    animation: fadeUp 0.9s var(--ease) 0.82s forwards;
+}
+
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(18px, 4vw, 56px);
+    margin-top: clamp(30px, 5vh, 52px);
+    padding-top: clamp(20px, 3vh, 30px);
+    border-top: 1px solid var(--line-inv);
+    opacity: 0;
+    animation: fadeUp 0.9s var(--ease) 0.85s forwards;
+}
+
+.hero-facts .fact { max-width: 210px; }
+.hero-facts .fact b {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+}
+.hero-facts .fact b svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
+.hero-facts .fact span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--text-inv-soft);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee {
+    background: var(--accent);
+    color: var(--ink);
+    overflow: hidden;
+    padding: 15px 0;
+    transform: rotate(-1.2deg) scale(1.02);
+    margin-block: -14px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 10px 30px rgba(13, 14, 17, 0.25);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+}
+
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+    padding-right: 26px;
+    font-family: var(--font-display);
+    font-stretch: 120%;
+    font-weight: 850;
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.marquee-track span::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ink);
+    flex: none;
+}
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ============================================================
+   SERVICIOS
+   ============================================================ */
+.services { background: var(--paper); }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(18px, 3vw, 34px);
+}
+
+.service-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+    border-color: transparent;
+}
+
+.service-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.service-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+}
+.service-card:hover .service-media img { transform: scale(1.07); }
+
+.service-num {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(13, 14, 17, 0.72);
+    backdrop-filter: blur(6px);
+    color: var(--paper);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+}
+
+.service-body { padding: clamp(22px, 3vw, 32px); }
+
+.service-body h3 {
+    font-family: var(--font-display);
+    font-stretch: 116%;
+    font-weight: 800;
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    line-height: 1.12;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    transition: color 0.25s;
+}
+.service-card:hover .service-body h3 { color: var(--accent-dark); }
+
+.service-body p { font-size: 0.95rem; color: var(--text-soft); }
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.service-tags li {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--paper-2);
+    color: var(--text-soft);
+}
+
+/* ============================================================
+   PROYECTOS — Antes / Después (dark)
+   ============================================================ */
+.projects { background: var(--ink); color: var(--text-inv); }
+.projects .h-section { color: var(--text-inv); }
+.projects .lead { color: var(--text-inv-soft); }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+}
+
+.ba-card {
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    background: var(--ink-2);
+    border: 1px solid var(--line-inv);
+    transition: transform 0.45s var(--ease), border-color 0.3s, box-shadow 0.45s var(--ease);
+}
+.ba-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(8, 127, 140, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* Comparador */
+.ba {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: ew-resize;
+}
+
+.ba img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.ba .after-img {
+    clip-path: inset(0 0 0 var(--pos, 50%));
+}
+
+.ba-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos, 50%);
+    width: 3px;
+    margin-left: -1.5px;
+    background: var(--white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 50%;
+    left: var(--pos, 50%);
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), 0 0 0 5px rgba(255, 255, 255, 0.25);
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    transition: transform 0.2s var(--ease);
+}
+.ba:hover .ba-handle { transform: translate(-50%, -50%) scale(1.08); }
+.ba-handle svg { width: 26px; height: 26px; color: var(--white); }
+
+.ba input[type="range"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+.ba input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 60px;
+    height: 100%;
+}
+.ba input[type="range"]::-moz-range-thumb {
+    width: 60px;
+    height: 100%;
+    border: 0;
+    background: transparent;
+}
+
+.ba-tag {
+    position: absolute;
+    top: 14px;
+    z-index: 3;
+    padding: 6px 13px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: rgba(13, 14, 17, 0.66);
+    backdrop-filter: blur(6px);
+    color: var(--paper);
+    pointer-events: none;
+}
+.ba-tag.t-before { left: 14px; }
+.ba-tag.t-after { right: 14px; background: var(--accent); color: var(--white); }
+
+.ba-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
+}
+
+.ba-caption h3 {
+    font-family: var(--font-display);
+    font-weight: 750;
+    font-size: 1.02rem;
+    letter-spacing: 0.01em;
+}
+
+.ba-caption .cat {
+    flex: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* Galería de trabajos recientes */
+.work-gallery-section {
+    margin-top: clamp(72px, 8vw, 112px);
+    padding-top: clamp(44px, 5vw, 72px);
+    border-top: 1px solid var(--line-inv);
+}
+
+.work-gallery-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: clamp(24px, 3vw, 38px);
+}
+
+.work-gallery-kicker {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.work-gallery-head h3 {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 3.4rem);
+    font-weight: 850;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+}
+
+.work-gallery-head p {
+    max-width: 620px;
+    margin-top: 14px;
+    color: var(--text-inv-soft);
+    line-height: 1.65;
+}
+
+.work-gallery-count {
+    flex: none;
+    padding: 10px 15px;
+    border: 1px solid var(--line-inv);
+    border-radius: 999px;
+    color: var(--text-inv-soft);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.work-gallery {
+    --gallery-gap: clamp(10px, 1.3vw, 18px);
+    column-count: 4;
+    column-gap: var(--gallery-gap);
+}
+
+.work-gallery:not(.is-expanded) .work-photo:nth-child(n + 9) { display: none; }
+
+.work-photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 var(--gallery-gap);
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line-inv);
+    border-radius: var(--radius-m);
+    background: var(--ink-2);
+    color: var(--white);
+    cursor: zoom-in;
+    isolation: isolate;
+    break-inside: avoid;
+}
+
+.work-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.75s var(--ease), filter 0.45s ease;
+}
+
+.work-photo::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 35% 0 0;
+    background: linear-gradient(to top, rgba(3, 11, 14, 0.88), transparent);
+    pointer-events: none;
+}
+
+.work-photo span {
+    position: absolute;
+    z-index: 2;
+    right: 16px;
+    bottom: 15px;
+    left: 16px;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 750;
+    letter-spacing: 0.045em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.work-photo:hover img,
+.work-photo:focus-visible img {
+    transform: scale(1.055);
+    filter: saturate(1.08) contrast(1.03);
+}
+
+.work-photo:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.gallery-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 210px;
+    margin: 30px auto 0;
+    padding: 14px 22px;
+    border: 1px solid rgba(39, 167, 178, 0.42);
+    border-radius: 999px;
+    background: rgba(8, 127, 140, 0.09);
+    color: var(--white);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform 0.3s var(--ease), border-color 0.25s, background 0.25s;
+}
+
+.gallery-more:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: rgba(8, 127, 140, 0.18);
+}
+
+.gallery-more svg {
+    width: 17px;
+    height: 17px;
+    transition: transform 0.3s var(--ease);
+}
+
+.gallery-more[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.gallery-lightbox {
+    width: min(1180px, calc(100vw - 40px));
+    max-width: none;
+    max-height: calc(100vh - 40px);
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    border-radius: var(--radius-m);
+    background: transparent;
+    color: var(--white);
+}
+
+.gallery-lightbox::backdrop {
+    background: rgba(2, 8, 10, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.gallery-lightbox-inner {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-m);
+    background: #06171c;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-lightbox img {
+    width: 100%;
+    max-height: calc(100vh - 120px);
+    object-fit: contain;
+    background: #03090b;
+}
+
+.gallery-lightbox p {
+    padding: 15px 22px 17px;
+    color: var(--text-inv-soft);
+    font-size: 0.86rem;
+}
+
+.gallery-lightbox-close {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(3, 10, 13, 0.78);
+    color: var(--white);
+    font: inherit;
+    font-size: 1.45rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   NOSOTROS
+   ============================================================ */
+.about { background: var(--paper); }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(36px, 6vw, 84px);
+    align-items: center;
+}
+
+.about-media { position: relative; }
+
+.about-media .frame {
+    position: relative;
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
+}
+.about-media .frame img {
+    width: 100%;
+    aspect-ratio: 4 / 4.6;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+}
+.about-media:hover .frame img { transform: scale(1.04); }
+
+.about-badge {
+    position: absolute;
+    right: -14px;
+    bottom: 34px;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: var(--radius-m);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-accent);
+    text-align: center;
+    transform: rotate(-3deg);
+}
+.about-badge b {
+    display: block;
+    font-family: var(--font-display);
+    font-stretch: 120%;
+    font-weight: 850;
+    font-size: 2.4rem;
+    line-height: 1;
+}
+.about-badge span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.about-body p { color: var(--text-soft); margin-top: 16px; }
+.about-body p strong { color: var(--text); }
+
+.about-clients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 26px;
+}
+
+.about-body .btn { margin-top: 30px; }
+
+/* ============================================================
+   PROCESO
+   ============================================================ */
+.process {
+    position: relative;
+    overflow: clip;
+    --process-progress: 0;
+    background:
+        radial-gradient(circle at 84% 18%, rgba(8, 127, 140, 0.11), transparent 28%),
+        linear-gradient(145deg, #0e2731 0%, var(--ink-2) 56%, #081820 100%);
+    color: var(--text-inv);
+}
+.process::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image:
+        linear-gradient(rgba(244, 241, 234, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 241, 234, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 82%, transparent);
+}
+.process .container { position: relative; z-index: 1; }
+.process .h-section { color: var(--text-inv); }
+.process .lead { color: var(--text-inv-soft); }
+.process-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.78fr) minmax(520px, 1.22fr);
+    align-items: start;
+    gap: clamp(48px, 7vw, 110px);
+}
+.process-intro {
+    position: sticky;
+    top: calc(var(--nav-h) + 42px);
+    padding-top: 8px;
+}
+.process-intro .sec-head { margin-bottom: 0; }
+
+.process-flow {
+    position: relative;
+    height: 24px;
+    margin: clamp(32px, 4vw, 52px) 8px 0;
+}
+.process-flow::before,
+.process-flow-fill {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 999px;
+}
+.process-flow::before { background: rgba(244, 241, 234, 0.13); }
+.process-flow-fill {
+    background: linear-gradient(90deg, #23a6b2, var(--accent));
+    box-shadow: 0 0 22px rgba(8, 127, 140, 0.55);
+    transform: scaleX(var(--process-progress));
+    transform-origin: left center;
+    transition: transform 0.12s linear;
+}
+.process-flow-node {
+    position: absolute;
+    top: 5px;
+    left: var(--x);
+    width: 14px;
+    height: 14px;
+    border: 3px solid var(--ink-2);
+    border-radius: 50%;
+    background: #527079;
+    box-shadow: 0 0 0 1px rgba(244, 241, 234, 0.22);
+    transform: translateX(-50%) scale(0.86);
+    transition: background 0.35s, box-shadow 0.35s, transform 0.45s var(--ease);
+}
+.process-flow-node.is-active {
+    background: var(--accent);
+    box-shadow: 0 0 0 5px rgba(8, 127, 140, 0.15), 0 0 22px rgba(8, 127, 140, 0.72);
+    transform: translateX(-50%) scale(1);
+}
+
+.steps {
+    display: block;
+    min-width: 0;
+    padding-bottom: 28vh;
+    counter-reset: step;
+}
+
+.step {
+    --stack-scale: 1;
+    --stack-dim: 0;
+    position: sticky;
+    top: calc(var(--nav-h) + 28px);
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.96fr) minmax(240px, 1.04fr);
+    min-height: 360px;
+    margin-bottom: 28vh;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line-inv);
+    border-radius: var(--radius-m);
+    background: linear-gradient(165deg, #12313b, #0b2029 72%);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
+    isolation: isolate;
+    transform: scale(var(--stack-scale));
+    transform-origin: top center;
+    will-change: transform;
+    transition: opacity 0.45s var(--ease), transform 0.14s linear, border-color 0.35s, box-shadow 0.4s;
+}
+.step:nth-child(2) { top: calc(var(--nav-h) + 46px); z-index: 11; }
+.step:nth-child(3) { top: calc(var(--nav-h) + 64px); z-index: 12; }
+.step:nth-child(4) { top: calc(var(--nav-h) + 82px); z-index: 13; margin-bottom: 8vh; }
+.process.process-enhanced .step { opacity: 0.42; }
+.process.process-enhanced .step.is-active {
+    opacity: 1;
+}
+.step::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(13, 14, 17, 0.62);
+    opacity: var(--stack-dim);
+    pointer-events: none;
+    transition: opacity 0.12s linear;
+}
+.step::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: scaleX(0);
+    z-index: 6;
+    transition: transform 0.5s var(--ease);
+}
+.step.is-active:hover {
+    border-color: rgba(8, 127, 140, 0.55);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(8, 127, 140, 0.1);
+}
+.step:hover::after { transform: scaleX(1); }
+
+.step-media {
+    position: relative;
+    overflow: hidden;
+    min-height: 344px;
+    height: calc(100% - 16px);
+    margin: 8px 0 8px 8px;
+    border-radius: calc(var(--radius-m) - 7px);
+    background: #07161d;
+}
+.step-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.82) brightness(0.76);
+    transform: scale(1.09);
+    transition: transform 1.1s var(--ease), filter 0.75s var(--ease);
+}
+.step.is-active .step-media img {
+    filter: saturate(1) brightness(0.94);
+    transform: scale(1);
+}
+.step:hover .step-media img { transform: scale(1.055); filter: saturate(1.08) brightness(1); }
+.step-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 14, 17, 0.88), transparent 62%);
+    pointer-events: none;
+}
+.step-media::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    inset: -30% auto -30% -45%;
+    width: 34%;
+    background: linear-gradient(90deg, transparent, rgba(8, 127, 140, 0.38), transparent);
+    transform: skewX(-16deg) translateX(-180%);
+    pointer-events: none;
+}
+.step.is-active .step-media::before {
+    animation: stepSweep 1s var(--ease) calc(var(--i) * 0.08s + 0.12s) both;
+}
+@keyframes stepSweep {
+    from { transform: skewX(-16deg) translateX(-180%); }
+    to { transform: skewX(-16deg) translateX(650%); }
+}
+
+.step .n {
+    position: absolute;
+    z-index: 3;
+    left: 16px;
+    bottom: 13px;
+    font-family: var(--font-display);
+    font-stretch: 122%;
+    font-weight: 850;
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    line-height: 1;
+    color: rgba(244, 241, 234, 0.96);
+    letter-spacing: -0.06em;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.48);
+    transition: color 0.3s, transform 0.4s var(--ease);
+}
+.step:hover .n { color: var(--accent); transform: translateX(4px); }
+
+.step-body {
+    padding: clamp(24px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.step-title-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.step-icon {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(8, 127, 140, 0.28);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    background: rgba(8, 127, 140, 0.08);
+    transition: color 0.3s, background 0.3s, transform 0.4s var(--ease);
+}
+.step-icon svg { width: 19px; height: 19px; }
+.step:hover .step-icon { color: var(--white); background: var(--accent); transform: rotate(8deg) scale(1.08); }
+
+.step h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 750;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+.step p { margin-top: 12px; font-size: 0.88rem; color: var(--text-inv-soft); }
+
+/* ============================================================
+   PAINT SCENE — pintor descendiendo y pintando con el scroll
+   ============================================================ */
+.paint-scene {
+    position: relative;
+    height: 260vh;
+    background: var(--paper-2);
+}
+
+.paint-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    --p: 0;
+}
+
+.ps-wall, .ps-paint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+}
+
+.ps-wall {
+    background: #cbd8d5;
+    z-index: 1;
+}
+
+.ps-paint {
+    background: var(--accent);
+    z-index: 2;
+    clip-path: inset(0 0 calc((1 - var(--p)) * 100%) 0);
+    will-change: clip-path;
+}
+
+.ps-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.012);
+}
+.ps-wall::after,
+.ps-paint::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.ps-wall::after {
+    background: linear-gradient(90deg, rgba(238, 241, 237, 0.74) 0%, rgba(238, 241, 237, 0.4) 42%, rgba(10, 28, 36, 0.08) 76%, rgba(10, 28, 36, 0.16) 100%);
+}
+.ps-paint::after {
+    background: linear-gradient(90deg, rgba(0, 47, 56, 0.34) 0%, rgba(0, 72, 82, 0.18) 42%, rgba(10, 28, 36, 0.04) 76%, rgba(10, 28, 36, 0.16) 100%);
+}
+
+.ps-content { position: relative; z-index: 2; width: 100%; }
+
+.ps-title {
+    font-size: clamp(2.4rem, 6.4vw, 5.9rem);
+    max-width: 20ch;
+}
+.ps-wall .ps-title { color: var(--text); }
+.ps-paint .ps-title { color: var(--white); }
+
+/* CTA aparece al final */
+.ps-cta {
+    margin-top: clamp(26px, 4vh, 42px);
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s var(--ease), transform 0.55s var(--ease), background 0.25s;
+    pointer-events: none;
+}
+.ps-cta:hover { background: var(--ink); color: var(--white); }
+.paint-sticky.done .ps-cta {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Goteos siguiendo el borde de la pintura */
+.ps-drips {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(var(--p) * 100%);
+    height: 24px;
+    z-index: 3;
+    background:
+        radial-gradient(ellipse 16px 9px at 13% 0, rgba(34, 161, 171, 0.88) 96%, transparent 100%),
+        radial-gradient(ellipse 9px 14px at 37% 0, rgba(8, 127, 140, 0.82) 96%, transparent 100%),
+        radial-gradient(ellipse 18px 8px at 68% 0, rgba(53, 177, 184, 0.78) 96%, transparent 100%),
+        linear-gradient(to bottom, rgba(21, 148, 159, 0.92), rgba(8, 127, 140, 0.42) 42%, transparent 100%);
+    filter: drop-shadow(0 4px 3px rgba(0, 54, 62, 0.22));
+    opacity: clamp(0, calc(var(--p) * 40), 1);
+    will-change: top;
+}
+
+/* Pintor */
+.ps-painter {
+    position: absolute;
+    top: 0;
+    right: clamp(-80px, -4vw, -30px);
+    left: auto;
+    z-index: 4;
+    /* --pw = ancho del pintor; el rodillo está al 30% de la altura de la imagen
+       (altura = --pw × 1.904) → desplazamos --pw × 0.58 para que el rodillo
+       quede siempre sobre el borde de la pintura */
+    --pw: clamp(360px, 32vw, 480px);
+    width: var(--pw);
+    transform: translateY(calc(var(--p) * 100vh - var(--pw) * 0.58));
+    will-change: transform;
+}
+
+.ps-swing {
+    position: relative;
+    transform-origin: 58.3% 0;
+    animation: psSwing 3.8s ease-in-out infinite alternate;
+}
+.ps-swing::before,
+.ps-swing::after {
+    content: "";
+    position: absolute;
+    left: 58.3%;
+    z-index: -1;
+    width: max(5px, calc(var(--pw) * 0.01));
+    height: 120vh;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #15191a 0%, #343a3b 46%, #171b1c 100%);
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.26);
+}
+.ps-swing::before { bottom: 100%; }
+.ps-swing::after { top: 100%; }
+@keyframes psSwing {
+    from { transform: rotate(-1.6deg); }
+    to { transform: rotate(1.6deg); }
+}
+
+.ps-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: saturate(0.94) contrast(0.98) drop-shadow(8px 14px 11px rgba(2, 18, 22, 0.28));
+}
+
+@media (max-width: 700px) {
+    .ps-painter {
+        --pw: clamp(400px, 112vw, 470px);
+        right: -120px;
+        left: auto;
+    }
+    .ps-title { max-width: 7.5ch; }
+}
+
+/* ============================================================
+   CONTACTO — cierre editorial + cotización directa
+   ============================================================ */
+.contact {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #edf2ef;
+    padding-block: clamp(86px, 10vw, 148px);
+}
+.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(8, 127, 140, 0.36), transparent);
+}
+.contact::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(720px, 70vw);
+    aspect-ratio: 1;
+    right: -28%;
+    top: -42%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(8, 127, 140, 0.11), transparent 68%);
+    pointer-events: none;
+}
+
+.contact-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.55fr);
+    align-items: end;
+    gap: clamp(44px, 8vw, 120px);
+    margin-bottom: clamp(44px, 6vw, 78px);
+}
+.contact-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+.contact-kicker::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+    background: currentColor;
+}
+.contact-title {
+    max-width: 11.5ch;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-stretch: 118%;
+    font-weight: 850;
+    letter-spacing: -0.055em;
+    line-height: 0.86;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+.contact-title .accent {
+    display: block;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.contact-copy {
+    padding-left: clamp(24px, 3vw, 42px);
+    border-left: 1px solid rgba(8, 127, 140, 0.28);
+}
+.contact-copy > p {
+    max-width: 40ch;
+    color: var(--text-soft);
+    font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+    line-height: 1.75;
+}
+.contact-promises {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 26px;
+}
+.contact-promises span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.contact-promises span::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(8, 127, 140, 0.1);
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.82fr) minmax(420px, 1.18fr);
+    overflow: hidden;
+    border: 1px solid rgba(7, 23, 30, 0.12);
+    border-radius: clamp(24px, 3vw, 36px);
+    background: var(--white);
+    box-shadow: 0 34px 90px rgba(7, 23, 30, 0.16);
+}
+
+.contact-info {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(32px, 4.5vw, 58px);
+    background: #071a22;
+    color: var(--text-inv);
+}
+.contact-info::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: auto -35% -28% 16%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(8, 127, 140, 0.3), transparent 68%);
+    pointer-events: none;
+}
+.contact-status {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    border: 1px solid rgba(243, 247, 245, 0.14);
+    border-radius: 999px;
+    color: rgba(243, 247, 245, 0.74);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.contact-status i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 0 0 5px rgba(37, 211, 102, 0.12);
+}
+.contact-info h3 {
+    max-width: 11ch;
+    margin-top: clamp(36px, 6vw, 74px);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3.35rem);
+    font-stretch: 118%;
+    font-weight: 820;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+}
+.contact-info > p {
+    max-width: 35ch;
+    margin-top: 18px;
+    color: rgba(243, 247, 245, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+.contact-wa-primary {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 30px;
+    padding: 16px 17px;
+    border-radius: 17px;
+    background: #25d366;
+    color: #04170c;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.25s;
+}
+.contact-wa-primary:hover {
+    transform: translateY(-4px);
+    background: #31df72;
+    box-shadow: 0 21px 42px rgba(0, 0, 0, 0.28);
+}
+.contact-wa-primary svg { width: 25px; height: 25px; flex: none; }
+.contact-wa-primary span { display: grid; gap: 1px; }
+.contact-wa-primary strong { font-size: 0.94rem; }
+.contact-wa-primary small { font-size: 0.72rem; opacity: 0.7; }
+.contact-wa-primary .wa-arrow {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: rgba(4, 23, 12, 0.1);
+    font-size: 1.05rem;
+}
+
+.contact-rows {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 34px;
+}
+.c-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid rgba(243, 247, 245, 0.11);
+    border-radius: 15px;
+    background: rgba(243, 247, 245, 0.035);
+    transition: border-color 0.25s, background 0.25s, transform 0.3s var(--ease);
+}
+.c-row:hover {
+    border-color: rgba(8, 127, 140, 0.7);
+    background: rgba(8, 127, 140, 0.1);
+    transform: translateY(-3px);
+}
+.c-row .ic {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: rgba(243, 247, 245, 0.08);
+    color: var(--white);
+}
+.c-row .ic svg { width: 17px; height: 17px; }
+.c-row > span:last-child { min-width: 0; }
+.c-row b {
+    display: block;
+    overflow: hidden;
+    color: rgba(243, 247, 245, 0.92);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.c-row > span:last-child > span {
+    display: block;
+    margin-top: 2px;
+    color: rgba(243, 247, 245, 0.46);
+    font-size: 0.66rem;
+}
+.c-row.ig .ic { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+
+.contact-form {
+    padding: clamp(32px, 5vw, 64px);
+    background: var(--white);
+}
+.form-head { margin-bottom: 30px; }
+.form-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.contact-form h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.55rem);
+    font-stretch: 118%;
+    font-weight: 820;
+    letter-spacing: -0.035em;
+    line-height: 1;
+}
+.contact-form .form-head p {
+    max-width: 48ch;
+    margin-top: 10px;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.field { margin-bottom: 17px; }
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-soft);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+.field input,
+.field textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: #f0f4f2;
+    color: var(--text);
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    resize: vertical;
+}
+.field input { min-height: 54px; padding: 0 16px; }
+.field textarea { min-height: 126px; padding: 15px 16px; }
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(34, 45, 48, 0.43); }
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--white);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+}
+.contact-form .btn {
+    width: 100%;
+    min-height: 56px;
+    border-radius: 15px;
+}
+.form-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    color: var(--text-soft);
+    font-size: 0.72rem;
+    text-align: center;
+}
+.form-note::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #25d366;
+}
+
+@media (max-width: 980px) {
+    .contact-top { grid-template-columns: 1fr; gap: 32px; }
+    .contact-copy {
+        max-width: 660px;
+        padding: 28px 0 0;
+        border-top: 1px solid rgba(8, 127, 140, 0.24);
+        border-left: 0;
+    }
+    .contact-card { grid-template-columns: 1fr; }
+    .contact-info h3 { margin-top: 38px; }
+}
+
+@media (max-width: 600px) {
+    .contact { padding-block: 76px; }
+    .contact-title {
+        max-width: none;
+        font-size: clamp(1.55rem, 7vw, 2.8rem);
+        line-height: 0.92;
+    }
+    .contact-promises { display: grid; gap: 13px; }
+    .contact-card { border-radius: 22px; }
+    .contact-info,
+    .contact-form { padding: 27px 22px; }
+    .contact-info h3 { max-width: 12ch; font-size: 2.15rem; }
+    .contact-rows,
+    .form-grid { grid-template-columns: 1fr; }
+    .contact-rows { margin-top: 4px; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    position: relative;
+    isolation: isolate;
+    background: #07171e;
+    color: var(--text-inv);
+    padding-top: clamp(52px, 6vw, 84px);
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(620px, 58vw);
+    aspect-ratio: 1;
+    right: -16%;
+    top: -44%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(8, 127, 140, 0.16), rgba(8, 127, 140, 0) 68%);
+    pointer-events: none;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 1.35fr) minmax(150px, 0.65fr) minmax(270px, 1fr);
+    gap: clamp(34px, 6vw, 96px);
+    padding: 0 0 clamp(46px, 6vw, 76px);
+}
+
+.footer h4 {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(243, 247, 245, 0.44);
+    margin-bottom: 20px;
+}
+
+.footer-brand {
+    display: block;
+    width: min(100%, 310px);
+    margin-bottom: 22px;
+}
+.footer-brand img { width: 100%; height: auto; }
+
+.footer-desc {
+    max-width: 43ch;
+    color: rgba(243, 247, 245, 0.58);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+.footer-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+}
+.footer-proof span {
+    padding: 7px 11px;
+    border: 1px solid rgba(243, 247, 245, 0.11);
+    border-radius: 999px;
+    color: rgba(243, 247, 245, 0.62);
+    font-size: 0.7rem;
+    font-weight: 650;
+}
+
+.footer ul { display: grid; gap: 10px; }
+.footer ul a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(243, 247, 245, 0.68);
+    font-size: 0.88rem;
+    transition: color 0.2s, transform 0.3s var(--ease);
+}
+.footer ul a::before { content: "↗"; color: rgba(39, 167, 178, 0.65); font-size: 0.72rem; }
+.footer ul a:hover { color: var(--white); transform: translateX(4px); }
+
+.footer-social { display: grid; gap: 12px; }
+
+.social-btn {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(243, 247, 245, 0.11);
+    border-radius: 12px;
+    background: rgba(243, 247, 245, 0.035);
+    color: var(--text-inv);
+    transition: transform 0.3s var(--ease), border-color 0.3s, background 0.3s;
+}
+.social-btn .social-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 9px;
+    background: rgba(243, 247, 245, 0.07);
+}
+.social-btn svg { width: 18px; height: 18px; }
+.social-btn strong,
+.social-btn small { display: block; }
+.social-btn strong { font-size: 0.82rem; font-weight: 700; line-height: 1.25; }
+.social-btn small { margin-top: 3px; color: rgba(243, 247, 245, 0.42); font-size: 0.67rem; }
+.social-btn::after { content: "↗"; color: rgba(243, 247, 245, 0.34); font-size: 0.8rem; }
+.social-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(39, 167, 178, 0.45);
+    background: rgba(8, 127, 140, 0.1);
+}
+
+.social-btn.wa .social-icon { color: #53dc86; }
+.social-btn.ig .social-icon { color: #6ac6ce; }
+
+.footer-bottom {
+    min-height: 68px;
+    padding: 20px 92px 20px 0;
+    border-top: 1px solid var(--line-inv);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: rgba(243, 247, 245, 0.43);
+}
+
+.footer-bottom strong { color: rgba(243, 247, 245, 0.68); font-weight: 600; }
+.footer-bottom a { color: #55bbc3; font-weight: 650; white-space: nowrap; }
+
+/* ============================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ============================================================ */
+.fab-wa {
+    position: fixed;
+    right: clamp(16px, 3vw, 28px);
+    bottom: clamp(16px, 3vw, 28px);
+    z-index: 90;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--wa);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s, background 0.25s;
+}
+.fab-wa svg { width: 30px; height: 30px; color: var(--white); }
+.fab-wa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--wa);
+    z-index: -1;
+    animation: fabPulse 2.4s var(--ease) infinite;
+}
+@keyframes fabPulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    75%, 100% { transform: scale(1.55); opacity: 0; }
+}
+.fab-wa:hover { transform: scale(1.1) rotate(6deg); background: var(--wa-dark); }
+
+.fab-tip {
+    position: absolute;
+    right: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 9px 15px;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s var(--ease);
+}
+.fab-wa:hover .fab-tip { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+/* ============================================================
+   ANIMACIONES DE REVELADO
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    transition-delay: var(--d, 0s);
+    will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+    .process-layout {
+        grid-template-columns: minmax(250px, 0.72fr) minmax(440px, 1.28fr);
+        gap: 38px;
+    }
+    .step { grid-template-columns: minmax(185px, 0.9fr) minmax(220px, 1.1fr); }
+    .process-flow { margin-inline: 8px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 860px) {
+    .nav-links, .nav-cta { display: none; }
+    .burger { display: grid; }
+
+    .services-grid,
+    .projects-grid,
+    .about-grid,
+    .contact-card { grid-template-columns: 1fr; }
+
+    .work-gallery { column-count: 2; }
+    .work-gallery-head { align-items: start; }
+
+    .about-media { max-width: 520px; }
+    .about-badge { right: 10px; bottom: -18px; padding: 16px 20px; }
+    .about-badge b { font-size: 2rem; }
+
+    .process-layout { display: block; }
+    .process-intro { position: relative; top: auto; padding-top: 0; }
+    .process-flow { margin: 30px 7px 34px; }
+    .steps { padding-bottom: 10vh; }
+    .step {
+        top: calc(var(--nav-h) + 16px);
+        grid-template-columns: 1fr;
+        min-height: 0;
+        margin-bottom: 22vh;
+    }
+    .step:nth-child(2) { top: calc(var(--nav-h) + 28px); }
+    .step:nth-child(3) { top: calc(var(--nav-h) + 40px); }
+    .step:nth-child(4) { top: calc(var(--nav-h) + 52px); margin-bottom: 8vh; }
+    .step-media {
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+        height: auto;
+        margin: 7px 7px 0;
+    }
+    .step-body { padding: 22px 22px 25px; }
+
+    .hero-bg { background-position: 62% center; }
+    .hero h1 { font-size: clamp(2.5rem, 11.5vw, 4.2rem); }
+
+}
+
+@media (max-width: 560px) {
+    .work-gallery-head { display: block; }
+    .work-gallery-count { display: inline-block; margin-top: 18px; }
+    .work-gallery { column-count: 1; }
+    .gallery-lightbox { width: calc(100vw - 24px); }
+    .process-flow { margin: 28px 7px 18px; }
+    .step-body { padding: 20px 20px 23px; }
+    .step { margin-bottom: 18vh; }
+    .step:nth-child(4) { margin-bottom: 6vh; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { padding-right: 70px; }
+    .hero-facts { gap: 18px; }
+    .hero-facts .fact { max-width: none; flex: 1 1 40%; }
+    .marquee { transform: rotate(0) scale(1); margin-block: 0; }
+    .fab-wa { width: 56px; height: 56px; }
+    .brand { width: 178px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .process-flow-fill,
+    .process-flow-node,
+    .step,
+    .step-media img,
+    .step-icon { transition: none !important; }
+    .step-media::before { animation: none !important; }
+}
+
+        </style>
     </head>
-	<body class="antialiased text-gray-800">
+	<body>
 
-			<!-- NAVBAR -->
-			<header class="fixed top-0 left-0 w-full z-40 bg-transparent md:bg-white md:border-b md:border-gray-200 transform transition-transform duration-300">
-				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<nav class="flex items-center justify-between h-12 md:h-12">
-						<div class="flex items-center">
-							<a href="#" class="text-xl md:text-lg font-semibold">PinturasZonaSur</a>
-						</div>
+        <!-- ==================== NAVBAR ==================== -->
+        <header class="nav" id="navbar">
+            <div class="container">
+                <a href="#inicio" class="brand" aria-label="PinturasZonaSur — Inicio">
+                    <img class="brand-logo" src="assets/brand/pinturas-zona-sur-wordmark-v1.png" alt="Pinturas Zona Sur" width="1792" height="384">
+                </a>
 
-						<!-- desktop links -->
-						<div class="hidden md:flex space-x-6 md:space-x-4 items-center text-sm md:text-xs">
-                            <a href="#index" class="text-gray-600 hover:text-gray-900">Inicio</a>
-                            <!-- Enlace a otra página -->
-                            <a href="#SERVICIOS" class="text-gray-600 hover:text-gray-900">Servicios</a>
-                            <!-- Enlace a sección interna (same page) -->
-                            <a href="#projects" class="text-gray-600 hover:text-gray-900">Proyectos</a>
-                            <!-- Enlace externo -->
-                            <a href="#contacto" class="text-gray-600 hover:text-gray-900">Contacto</a>
-                        </div>
-                        
-                        <!-- mobile hamburger -->
-                                    <div class="md:hidden">
-                                        <button id="menu-btn" aria-label="Abrir menú de navegación">
-                                            <span class="sr-only">Abrir menú</span>
-                                            <!-- hamburger icon -->
-                                            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-											</svg>
-											<!-- close icon (hidden by default) -->
-											<svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-											</svg>
-										</button>
-									</div>
-					</nav>
+                <nav class="nav-links" aria-label="Navegación principal">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#SERVICIOS">Servicios</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#about-us">Nosotros</a>
+                </nav>
 
-							<!-- mobile menu (animated) -->
-							<div id="mobile-menu" class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 md:hidden">
-                                <div class="pt-2 pb-4 px-4 flex flex-col space-y-2 bg-white/95 shadow-md rounded-b">
-                                    <a href="index.html" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Inicio</a>
-                                    <a href="#SERVICIOS" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Servicios</a>
-                                    <a href="#projects" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Proyectos</a>
-                                    <a href="#contacto" class="block px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition">Contacto</a>
-                                </div>
-                            </div>
-				</div>
-			</header>
+                <a class="nav-cta" href="https://wa.me/56986472644?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20pintura." target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+                    Cotiza gratis
+                </a>
 
-		<!-- HERO -->
-		<main>
-			<section class="hero-bg min-h-[80vh] md:min-h-screen relative">
-				<!-- overlay -->
-				<div class="absolute inset-0 bg-black/50"></div>
+                <button class="burger" id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                    <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+            </div>
+        </header>
 
-				<div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-						<div class="text-left text-white max-w-2xl">
-							<h1 class="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold leading-tight drop-shadow-md">
-								Pintura de Edificios, Fachadas y Pisos |
-								Trabajos en Altura y Demarcaciones Viales
+        <!-- Menú móvil -->
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+            <a class="m-link" href="#inicio">Inicio</a>
+            <a class="m-link" href="#SERVICIOS">Servicios</a>
+            <a class="m-link" href="#projects">Proyectos</a>
+            <a class="m-link" href="#contacto">Contacto</a>
+            <a class="m-link" href="#about-us">Nosotros</a>
+            <div class="m-foot">
+                <a class="btn btn-accent" href="https://wa.me/56986472644?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20pintura." target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
+                <a class="btn btn-ghost" href="https://www.instagram.com/pinturas_zona_sur/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </nav>
 
-							</h1>
+        <main>
+            <!-- ==================== HERO ==================== -->
+            <section class="hero" id="inicio">
+                <div class="hero-bg" role="img" aria-label="Operarios verticales pintando la fachada de un edificio"></div>
 
-							<div class="mt-6 text-gray-200 text-[13px] sm:text-sm leading-relaxed drop-shadow-sm">
-                                <p class="font-semibold"> Pintura profesional y recubrimientos</p>
+                <div class="hero-inner container">
+                    <h1 class="display">
+                        <span class="row"><span>Pinturas<i class="period">.</i></span></span>
+                        <span class="row"><span>Fachadas<i class="period">.</i></span></span>
+                        <span class="row"><span>Pisos<i class="period">.</i></span></span>
+                        <span class="row"><span>Alturas<i class="period">.</i></span></span>
+                    </h1>
 
-                                <p class="mt-2">
-                                   
-                                </p>
+                    <p class="hero-sub">
+                        Más de <strong>10 años</strong> pintando edificios, casas y demarcaciones viales a lo largo de todo Chile.
+                        Trabajos en altura con operadores verticales, recubrimientos epóxicos y acabados que <strong>perduran</strong>.
+                    </p>
 
-                                <p class="mt-3 font-medium">Servicios destacados: pintura de fachadas, edificios, muros exteriores e interiores, además de la aplicación de recubrimientos mata polvo para pisos y estacionamientos </p>
-
-                                <ul class="mt-2 list-disc list-inside space-y-0.5 text-gray-200">
-                                    <li>Pintura de muros y fachadas</li>
-                                    <li>Pintado de edificios y casas</li>
-                                    <li>Demarcación vial</li>
-                                    <li>Demarcación de pisos y estacionamientos</li>
-                                </ul>
-
-                                <p class="mt-3">Contacta para presupuesto y visita técnica. Pintura profesional</p>
-                            </div>
-							<div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-    <!-- Botón de WhatsApp -->
-    <a href="https://wa.me/56986472644?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20pintura." 
-       target="_blank" 
-       class="block w-full sm:w-auto text-center bg-sky-500 hover:bg-sky-600 text-white font-medium px-4 sm:px-5 py-3 rounded shadow text-sm sm:text-base">
-        Consulta por WhatsApp
-    </a>
-    <!-- Botón de Portafolio -->
-    <a href="#projects" 
-       class="block w-full sm:w-auto text-center bg-white text-gray-800 font-medium px-4 sm:px-5 py-3 rounded shadow text-sm sm:text-base">
-        Portafolio
-    </a>
-</div>
-						</div>
-
-						<!-- espacio derecho vacío (imagen está en el fondo alineada a la derecha) -->
-						<div class="hidden md:block"></div>
-					</div>
-				</div>
-			</section>
-			
-			<!-- NUESTRAS SERVICIOS (añadido debajo del hero) -->
-            <section class="bg-white py-20" id="SERVICIOS">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div class="text-center">
-                        <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight">
-                            <span class="block text-black">Nuestros</span>
-                            <span class="block text-sky-400">Servicios</span>
-                        </h2>
+                    <div class="hero-ctas">
+                        <a class="btn btn-accent" href="https://wa.me/56986472644?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20pintura." target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+                            Cotiza por WhatsApp
+                        </a>
+                        <a class="btn btn-ghost" href="#projects">Ver proyectos</a>
                     </div>
 
-                    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-                        <!-- Card 1 -->
-                        <article class="space-y-4">
-                            <img src="vertical.webp" alt="Pintura profesional en altura con operadores verticales en Chile" 
-                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
-                                 loading="lazy" 
-                                 decoding="async"
-                                 onload="this.classList.add('loaded')">
-                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
-                            <h3 class="text-lg font-semibold text-gray-900">Pintado con operadores verticales</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                Realizamos trabajos en altura con especialistas en técnicas de acceso mediante cuerdas, garantizando seguridad y eficiencia en cada proyecto. Nuestros operadores verticales permiten pintar fachadas y estructuras de difícil acceso sin andamios.
-                            </p>
-                        </article>
-
-                        <!-- Card 2 -->
-                        <article class="space-y-4">
-                            <img src="fachadadespues.webp" alt="Pintura en altura con máquinas alza hombre para fachadas y edificios" 
-                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
-                                 loading="lazy" 
-                                 decoding="async"
-                                 onload="this.classList.add('loaded')">
-                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
-                            <h3 class="text-lg font-semibold text-gray-900">Pintado con Máquinas Alza Hombre</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                Optimizamos el trabajo en altura con equipos de elevación modernos que garantizan seguridad, rapidez y precisión. Ideal para proyectos donde la productividad y la seguridad son prioritarias.
-                            </p>
-                        </article>
-
-                        <!-- Card 3 -->
-                        <article class="space-y-4">
-                            <img src="fachada.webp" alt="Pintura de fachadas de edificios y viviendas con acabados duraderos" 
-                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
-                                 loading="lazy" 
-                                 decoding="async"
-                                 onload="this.classList.add('loaded')">
-                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
-                            <h3 class="text-lg font-semibold text-gray-900">Pintado de Fachadas</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                Renueva la apariencia de tu edificio o vivienda con un acabado profesional y duradero. Uso de materiales de alta calidad y técnicas especializadas para proteger contra humedad y desgaste.
-                            </p>
-                        </article>
-
-                        <!-- Card 4: Demarcación y Pintado de Pisos -->
-                        <article class="space-y-4">
-                            <img src="Demarcación de estacionamientos.webp" alt="Demarcación vial y pintado de pisos en estacionamientos" 
-                                 class="w-full h-52 object-cover rounded shadow-sm lazy-image" 
-                                 loading="lazy" 
-                                 decoding="async"
-                                 onload="this.classList.add('loaded')">
-                            <p class="text-sky-400 text-sm font-medium">Servicios</p>
-                            <h3 class="text-lg font-semibold text-gray-900">Demarcación y pintado de pisos</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                Para demarcación de pisos utilizamos pintura acrílica vial.  
-                                Para el pintado de pisos y estacionamientos aplicamos epóxica bicomponente y pintura para tránsito vehicular, garantizando durabilidad, resistencia y acabado profesional.
-                            </p>
-                        </article>
-
+                    <div class="hero-facts">
+                        <div class="fact">
+                            <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>+10 años</b>
+                            <span>de trayectoria en pintura profesional</span>
+                        </div>
+                        <div class="fact">
+                            <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sector público y privado</b>
+                            <span>aeropuertos, bases aéreas, edificios fiscales y colegios</span>
+                        </div>
+                        <div class="fact">
+                            <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Todo Chile</b>
+                            <span>trabajos realizados a lo largo de todo el país</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- PROYECTOS QUE NOS ENORGULLECEN (cards + slider automático) -->
-            <section id="projects" class="bg-gray-50 py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight">
-                <span class="block text-black">Proyectos que nos</span>
-                <span class="block text-sky-400">enorgullecen</span>
-            </h2>
-            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-                Revisa el antes y el después en obras reales.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 1</h3>
-                <div class="relative">
-                    <img src="edificioantes.webp" alt="Antes de la pintura profesional en edificio de altura" 
-                         class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 lazy-image" 
-                         id="image-1" 
-                         loading="lazy" 
-                         decoding="async"
-                         onload="this.classList.add('loaded')">
-                    <img src="edificiodespues.webp" alt="Después de la pintura profesional en edificio de altura" 
-                         class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden lazy-image" 
-                         id="image-1-after" 
-                         loading="lazy" 
-                         decoding="async"
-                         onload="this.classList.add('loaded')">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(1)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(1)">Después</button>
+            <!-- ==================== MARQUEE ==================== -->
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>Fachadas</span><span>Edificios</span><span>Demarcación vial</span><span>Pisos epóxicos</span><span>Trabajos en altura</span><span>Estacionamientos</span>
+                    <span>Fachadas</span><span>Edificios</span><span>Demarcación vial</span><span>Pisos epóxicos</span><span>Trabajos en altura</span><span>Estacionamientos</span>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 2</h3>
-                <div class="relative">
-                    <img src="imgoptmizada/casaantes.webp" alt="Antes de la pintura profesional en casa residencial" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-2">
-                    <img src="imgoptmizada/casadespues.webp" alt="Después de la pintura profesional en casa residencial" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-2-after">
+            <!-- ==================== SERVICIOS ==================== -->
+            <section class="services section" id="SERVICIOS">
+                <div class="container">
+                    <div class="sec-head reveal">
+                        <h2 class="h-section">Lo que hacemos,<br>lo hacemos <span class="accent">bien</span></h2>
+                        <p class="lead">Especialistas en pintura y recubrimientos para proyectos de cualquier escala: desde una casa hasta un aeropuerto.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <article class="service-card reveal" style="--d:.05s">
+                            <div class="service-media">
+                                <span class="service-num">01</span>
+                                <img src="vertical.jpg" alt="Operador vertical pintando la fachada de un edificio con técnica de cuerdas" loading="lazy" decoding="async">
+                            </div>
+                            <div class="service-body">
+                                <h3>Trabajos en altura</h3>
+                                <p>Especialistas en acceso mediante cuerdas: pintamos fachadas y estructuras de difícil acceso sin andamios, con total seguridad y eficiencia en cada proyecto.</p>
+                                <ul class="service-tags">
+                                    <li>Operadores verticales</li>
+                                    <li>Sin andamios</li>
+                                    <li>Seguridad certificada</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="service-card reveal" style="--d:.12s">
+                            <div class="service-media">
+                                <span class="service-num">02</span>
+                                <img src="fachadadespues.jpg" alt="Pintura en altura con máquinas alzahombre para fachadas y edificios" loading="lazy" decoding="async">
+                            </div>
+                            <div class="service-body">
+                                <h3>Máquinas alzahombre</h3>
+                                <p>Optimizamos el trabajo en altura con equipos de elevación modernos que garantizan seguridad, rapidez y precisión. Ideal para proyectos donde la productividad es prioritaria.</p>
+                                <ul class="service-tags">
+                                    <li>Equipos de elevación</li>
+                                    <li>Rapidez</li>
+                                    <li>Precisión</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="service-card reveal" style="--d:.05s">
+                            <div class="service-media">
+                                <span class="service-num">03</span>
+                                <img src="fachada.jpg" alt="Pintura de fachadas de edificios y viviendas con acabados duraderos" loading="lazy" decoding="async">
+                            </div>
+                            <div class="service-body">
+                                <h3>Pintado de fachadas</h3>
+                                <p>Renueva la apariencia de tu edificio o vivienda con un acabado profesional y duradero. Materiales de alta calidad y técnicas especializadas contra humedad y desgaste.</p>
+                                <ul class="service-tags">
+                                    <li>Esmalte al agua</li>
+                                    <li>Antihumedad</li>
+                                    <li>Interiores y exteriores</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="service-card reveal" style="--d:.12s">
+                            <div class="service-media">
+                                <span class="service-num">04</span>
+                                <img src="Demarcación de estacionamientos.jpg" alt="Demarcación vial y pintado de pisos en estacionamientos, vista aérea" loading="lazy" decoding="async">
+                            </div>
+                            <div class="service-body">
+                                <h3>Demarcación y pisos</h3>
+                                <p>Demarcación con pintura acrílica vial y pintado de pisos y estacionamientos con epóxica bicomponente y pintura para tránsito vehicular. Durabilidad, resistencia y acabado profesional.</p>
+                                <ul class="service-tags">
+                                    <li>Epóxica bicomponente</li>
+                                    <li>Pintura vial</li>
+                                    <li>Tránsito vehicular</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(2)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(2)">Después</button>
+            </section>
+
+            <!-- ==================== PROYECTOS ==================== -->
+            <section class="projects section on-dark" id="projects">
+                <div class="container">
+                    <div class="sec-head reveal">
+                        <h2 class="h-section">El antes y después<br>habla por <span class="accent">nosotros</span></h2>
+                        <p class="lead">Arrastra el control sobre cada imagen y descubre la transformación en obras reales.</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Proyecto 1 -->
+                        <figure class="ba-card reveal" style="--d:.05s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="edificioantes.jpg" alt="Antes: fachada deteriorada de edificio en altura" loading="lazy" decoding="async">
+                                <img class="after-img" src="edificiodespues.jpg" alt="Después: fachada renovada de edificio en altura" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: edificio residencial">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Edificio residencial</h3>
+                                <span class="cat">Fachada</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 2 -->
+                        <figure class="ba-card reveal" style="--d:.12s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="imgoptmizada/casaantes.jpg" alt="Antes: casa residencial con pintura envejecida" loading="lazy" decoding="async">
+                                <img class="after-img" src="imgoptmizada/casadespues.jpg" alt="Después: casa residencial con pintura renovada" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: casa residencial">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Casa residencial</h3>
+                                <span class="cat">Fachada</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 3 -->
+                        <figure class="ba-card reveal" style="--d:.05s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="pisopintado.jpg" alt="Antes: aplicación de recubrimiento y demarcación en piso industrial" loading="lazy" decoding="async">
+                                <img class="after-img" src="pisopintadodespues.jpg" alt="Después: piso industrial con recubrimiento epóxico y demarcación terminada" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: piso industrial">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Piso industrial</h3>
+                                <span class="cat">Recubrimiento</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 4 -->
+                        <figure class="ba-card reveal" style="--d:.12s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="pinturaedificioantes.jpg" alt="Antes: edificio comercial con pintura desgastada" loading="lazy" decoding="async">
+                                <img class="after-img" src="pinturadeedificiodespues.jpg" alt="Después: edificio comercial con acabado renovado" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: edificio comercial">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Edificio comercial</h3>
+                                <span class="cat">Fachada</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 5 -->
+                        <figure class="ba-card reveal" style="--d:.05s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="imgoptmizada/piedrasantes.jpg" alt="Antes: muro de piedra natural sin tratar" loading="lazy" decoding="async">
+                                <img class="after-img" src="imgoptmizada/piedrasdespues.jpg" alt="Después: muro de piedra natural sellado y renovado" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: muro de piedra">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Muro de piedra</h3>
+                                <span class="cat">Restauración</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 6 -->
+                        <figure class="ba-card reveal" style="--d:.12s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="imgoptmizada/fachadadespues2.jpg" alt="Antes: muro de ladrillo deteriorado en recinto educacional" loading="lazy" decoding="async">
+                                <img class="after-img" src="imgoptmizada/fachadaantes2.jpg" alt="Después: muro pintado en recinto educacional" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: recinto educacional">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Recinto educacional</h3>
+                                <span class="cat">Fachada</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 7 -->
+                        <figure class="ba-card reveal" style="--d:.05s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="imgoptmizada/antesfa.jpg" alt="Antes: fachada de edificio institucional deteriorada" loading="lazy" decoding="async">
+                                <img class="after-img" src="imgoptmizada/despuesfe.jpg" alt="Después: fachada de edificio institucional renovada" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: edificio institucional">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Edificio institucional</h3>
+                                <span class="cat">Fachada</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Proyecto 8 -->
+                        <figure class="ba-card reveal" style="--d:.12s">
+                            <div class="ba" style="--pos:50%">
+                                <img class="before-img" src="pisocalleantes.jpg" alt="Antes: calle sin demarcación vial" loading="lazy" decoding="async">
+                                <img class="after-img" src="pisocalledespues.jpg" alt="Después: calle con demarcación vial terminada" loading="lazy" decoding="async">
+                                <span class="ba-tag t-before">Antes</span>
+                                <span class="ba-tag t-after">Después</span>
+                                <div class="ba-divider"></div>
+                                <div class="ba-handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-4 6 4 6M15 6l4 6-4 6"/></svg></div>
+                                <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Comparar antes y después: demarcación vial">
+                            </div>
+                            <figcaption class="ba-caption">
+                                <h3>Demarcación vial</h3>
+                                <span class="cat">Vial</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="work-gallery-section">
+                        <div class="work-gallery-head reveal">
+                            <div>
+                                <span class="work-gallery-kicker">Obras recientes</span>
+                                <h3>Más trabajos<br>en terreno</h3>
+                                <p>Una selección de fachadas, restauraciones y trabajos en altura ejecutados por nuestro equipo.</p>
+                            </div>
+                            <span class="work-gallery-count">23 fotografías reales</span>
+                        </div>
+
+                        <div class="work-gallery" id="workGallery">
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-01.webp" data-gallery-caption="Pintura de fachada con plataforma elevadora" aria-label="Ampliar foto: pintura de fachada con plataforma elevadora">
+                                <img src="assets/gallery/trabajo-fachada-01.webp" alt="Trabajo de pintura en fachada amarilla con plataforma elevadora" width="1253" height="1185" loading="lazy" decoding="async">
+                                <span>Pintura en altura</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-02.webp" data-gallery-caption="Restauración de fachada patrimonial" aria-label="Ampliar foto: restauración de fachada patrimonial">
+                                <img src="assets/gallery/trabajo-fachada-02.webp" alt="Restauración de fachada patrimonial roja y crema" width="1210" height="1600" loading="lazy" decoding="async">
+                                <span>Restauración patrimonial</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-03.webp" data-gallery-caption="Fachada patrimonial terminada" aria-label="Ampliar foto: fachada patrimonial terminada">
+                                <img src="assets/gallery/trabajo-fachada-03.webp" alt="Fachada patrimonial amarilla y roja terminada" width="1284" height="964" loading="lazy" decoding="async">
+                                <span>Fachada terminada</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-04.webp" data-gallery-caption="Fachada comercial antes de la renovación" aria-label="Ampliar foto: fachada comercial antes de la renovación">
+                                <img src="assets/gallery/trabajo-fachada-04.webp" alt="Fachada comercial antes de la renovación" width="1284" height="1207" loading="lazy" decoding="async">
+                                <span>Evaluación inicial</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-05.webp" data-gallery-caption="Pintura exterior de edificio esquinero" aria-label="Ampliar foto: pintura exterior de edificio esquinero">
+                                <img src="assets/gallery/trabajo-fachada-05.webp" alt="Pintura exterior de edificio esquinero amarillo" width="1266" height="934" loading="lazy" decoding="async">
+                                <span>Fachada comercial</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-06.webp" data-gallery-caption="Preparación de fachada patrimonial" aria-label="Ampliar foto: preparación de fachada patrimonial">
+                                <img src="assets/gallery/trabajo-fachada-06.webp" alt="Preparación de fachada patrimonial con perímetro de seguridad" width="1284" height="942" loading="lazy" decoding="async">
+                                <span>Preparación y seguridad</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-07.webp" data-gallery-caption="Fachada urbana antes de la restauración" aria-label="Ampliar foto: fachada urbana antes de la restauración">
+                                <img src="assets/gallery/trabajo-fachada-07.webp" alt="Fachada urbana antes de la restauración" width="1274" height="947" loading="lazy" decoding="async">
+                                <span>Antes de intervenir</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-08.webp" data-gallery-caption="Equipo trabajando en reparación de fachada" aria-label="Ampliar foto: equipo trabajando en reparación de fachada">
+                                <img src="assets/gallery/trabajo-fachada-08.webp" alt="Equipo trabajando en reparación y pintura de fachada" width="1222" height="1600" loading="lazy" decoding="async">
+                                <span>Trabajo en ejecución</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-09.webp" data-gallery-caption="Aplicación de pintura en fachada patrimonial" aria-label="Ampliar foto: aplicación de pintura en fachada patrimonial">
+                                <img src="assets/gallery/trabajo-fachada-09.webp" alt="Aplicación de pintura amarilla en fachada patrimonial" width="1284" height="940" loading="lazy" decoding="async">
+                                <span>Aplicación de color</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-10.webp" data-gallery-caption="Fachada restaurada en tonos crema y rojo" aria-label="Ampliar foto: fachada restaurada en tonos crema y rojo">
+                                <img src="assets/gallery/trabajo-fachada-10.webp" alt="Fachada restaurada en tonos crema y rojo" width="1284" height="934" loading="lazy" decoding="async">
+                                <span>Acabado exterior</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-11.webp" data-gallery-caption="Trabajo con plataforma elevadora" aria-label="Ampliar foto: trabajo con plataforma elevadora">
+                                <img src="assets/gallery/trabajo-fachada-11.webp" alt="Trabajo con plataforma elevadora en calle urbana" width="1284" height="953" loading="lazy" decoding="async">
+                                <span>Equipo alzahombre</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-12.webp" data-gallery-caption="Equipo de pintura trabajando sobre muro exterior" aria-label="Ampliar foto: equipo trabajando sobre muro exterior">
+                                <img src="assets/gallery/trabajo-fachada-12.webp" alt="Equipo de pintura trabajando sobre muro exterior" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Trabajo en equipo</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-13.webp" data-gallery-caption="Fachada patrimonial completamente renovada" aria-label="Ampliar foto: fachada patrimonial completamente renovada">
+                                <img src="assets/gallery/trabajo-fachada-13.webp" alt="Fachada patrimonial extensa completamente renovada" width="1284" height="939" loading="lazy" decoding="async">
+                                <span>Restauración terminada</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-14.webp" data-gallery-caption="Operario pintando con plataforma elevadora" aria-label="Ampliar foto: operario pintando con plataforma elevadora">
+                                <img src="assets/gallery/trabajo-fachada-14.webp" alt="Operario en plataforma elevadora pintando fachada" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Pintura mecanizada</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-15.webp" data-gallery-caption="Pintura en altura junto a ventana exterior" aria-label="Ampliar foto: pintura en altura junto a ventana exterior">
+                                <img src="assets/gallery/trabajo-fachada-15.webp" alt="Pintura en altura junto a ventana exterior" width="960" height="1280" loading="lazy" decoding="async">
+                                <span>Detalle en altura</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-16.webp" data-gallery-caption="Fachada antes de ser renovada" aria-label="Ampliar foto: fachada antes de ser renovada">
+                                <img src="assets/gallery/trabajo-fachada-16.webp" alt="Fachada comercial antes de ser renovada" width="1252" height="895" loading="lazy" decoding="async">
+                                <span>Estado inicial</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-17.webp" data-gallery-caption="Trabajo en altura sobre edificio de esquina" aria-label="Ampliar foto: trabajo en altura sobre edificio de esquina">
+                                <img src="assets/gallery/trabajo-fachada-17.webp" alt="Trabajo con plataforma elevadora en edificio de esquina" width="960" height="1280" loading="lazy" decoding="async">
+                                <span>Intervención en altura</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-18.webp" data-gallery-caption="Preparación de muro exterior" aria-label="Ampliar foto: preparación de muro exterior">
+                                <img src="assets/gallery/trabajo-fachada-18.webp" alt="Preparación de muro exterior para nueva pintura" width="960" height="1280" loading="lazy" decoding="async">
+                                <span>Preparación de superficie</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-19.webp" data-gallery-caption="Fachada exterior terminada" aria-label="Ampliar foto: fachada exterior terminada">
+                                <img src="assets/gallery/trabajo-fachada-19.webp" alt="Fachada terminada en tonos crema, amarillo y rojo" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Resultado final</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-20.webp" data-gallery-caption="Equipo terminando pintura exterior" aria-label="Ampliar foto: equipo terminando pintura exterior">
+                                <img src="assets/gallery/trabajo-fachada-20.webp" alt="Equipo terminando pintura de fachada blanca y roja" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Terminaciones</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-21.webp" data-gallery-caption="Fachada terminada en amarillo y rojo" aria-label="Ampliar foto: fachada terminada en amarillo y rojo">
+                                <img src="assets/gallery/trabajo-fachada-21.webp" alt="Fachada terminada en amarillo y rojo" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Obra entregada</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-22.webp" data-gallery-caption="Detalle del acabado de fachada" aria-label="Ampliar foto: detalle del acabado de fachada">
+                                <img src="assets/gallery/trabajo-fachada-22.webp" alt="Detalle del acabado de fachada crema y roja" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Detalle de acabado</span>
+                            </button>
+                            <button class="work-photo reveal" type="button" data-gallery-src="assets/gallery/trabajo-fachada-23.webp" data-gallery-caption="Pintura en altura de edificio comercial" aria-label="Ampliar foto: pintura en altura de edificio comercial">
+                                <img src="assets/gallery/trabajo-fachada-23.webp" alt="Pintura en altura de edificio comercial de esquina" width="1280" height="960" loading="lazy" decoding="async">
+                                <span>Fachada comercial</span>
+                            </button>
+                        </div>
+
+                        <button class="gallery-more" id="galleryMore" type="button" aria-controls="workGallery" aria-expanded="false">
+                            <span>Ver las 23 fotos</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PROCESO ==================== -->
+            <section class="process section on-dark" id="proceso">
+                <div class="container">
+                    <div class="process-layout">
+                        <div class="process-intro">
+                            <div class="sec-head reveal">
+                                <h2 class="h-section">Simple, claro<br>y <span class="accent">sin sorpresas</span></h2>
+                            </div>
+
+                            <div class="process-flow" aria-hidden="true">
+                                <span class="process-flow-fill"></span>
+                                <span class="process-flow-node" data-process-node="0" style="--x:0%"></span>
+                                <span class="process-flow-node" data-process-node="1" style="--x:33.333%"></span>
+                                <span class="process-flow-node" data-process-node="2" style="--x:66.666%"></span>
+                                <span class="process-flow-node" data-process-node="3" style="--x:100%"></span>
+                            </div>
+                        </div>
+
+                        <ol class="steps">
+                        <li class="step" data-process-step="0" style="--i:0">
+                            <figure class="step-media">
+                                <img src="assets/process/process-contacto.webp" alt="Operario revisando una solicitud de cliente desde su teléfono" width="960" height="540" loading="lazy" decoding="async">
+                                <span class="n" aria-hidden="true">01</span>
+                            </figure>
+                            <div class="step-body">
+                                <div class="step-title-row">
+                                    <h3>Contáctanos</h3>
+                                    <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 9h8M8 13h5"/></svg></span>
+                                </div>
+                                <p>Escríbenos por WhatsApp o el formulario y cuéntanos qué necesitas pintar.</p>
+                            </div>
+                        </li>
+                        <li class="step" data-process-step="1" style="--i:1">
+                            <figure class="step-media">
+                                <img src="assets/process/process-visita-tecnica.webp" alt="Técnico inspeccionando el estado de una fachada" width="960" height="540" loading="lazy" decoding="async">
+                                <span class="n" aria-hidden="true">02</span>
+                            </figure>
+                            <div class="step-body">
+                                <div class="step-title-row">
+                                    <h3>Visita técnica</h3>
+                                    <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M8 11h6M11 8v6"/></svg></span>
+                                </div>
+                                <p>Evaluamos la superficie, los accesos y los materiales ideales para tu proyecto.</p>
+                            </div>
+                        </li>
+                        <li class="step" data-process-step="2" style="--i:2">
+                            <figure class="step-media">
+                                <img src="assets/process/process-presupuesto.webp" alt="Planos, muestras de pintura y herramientas para preparar el presupuesto" width="960" height="540" loading="lazy" decoding="async">
+                                <span class="n" aria-hidden="true">03</span>
+                            </figure>
+                            <div class="step-body">
+                                <div class="step-title-row">
+                                    <h3>Presupuesto</h3>
+                                    <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></svg></span>
+                                </div>
+                                <p>Recibes una cotización clara, detallada y sin costos ocultos.</p>
+                            </div>
+                        </li>
+                        <li class="step" data-process-step="3" style="--i:3">
+                            <figure class="step-media">
+                                <img src="assets/process/process-ejecucion.webp" alt="Operario vertical aplicando pintura sobre una fachada" width="960" height="540" loading="lazy" decoding="async">
+                                <span class="n" aria-hidden="true">04</span>
+                            </figure>
+                            <div class="step-body">
+                                <div class="step-title-row">
+                                    <h3>Ejecución</h3>
+                                    <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="14" height="6" rx="2"/><path d="M17 7h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-7v8M12 17h3v4h-6v-4Z"/></svg></span>
+                                </div>
+                                <p>Realizamos el trabajo con seguridad, limpieza y acabado profesional.</p>
+                            </div>
+                        </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PAINT SCENE (pintor descendiendo) ==================== -->
+            <section class="paint-scene" aria-label="Animación decorativa: pintor descendiendo">
+                <div class="paint-sticky">
+                    <!-- Pared sin pintar -->
+                    <div class="ps-wall">
+                        <img class="ps-photo" src="assets/paint-scene/facade-before-v2.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" aria-hidden="true">
+                        <div class="container ps-content">
+                            <h2 class="ps-title display">Pintamos tu<br>próximo proyecto</h2>
+                        </div>
+                    </div>
+
+                    <!-- Capa de pintura (se revela con el scroll) -->
+                    <div class="ps-paint" aria-hidden="true">
+                        <img class="ps-photo" src="assets/paint-scene/facade-painted-petroleo-v3.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+                        <div class="container ps-content">
+                            <h2 class="ps-title display">Pintamos tu<br>próximo proyecto</h2>
+                            <a class="btn ps-cta" href="https://wa.me/56986472644?text=Hola,%20quiero%20cotizar%20mi%20proyecto%20de%20pintura." target="_blank" rel="noopener noreferrer" tabindex="-1">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+                                Cotiza por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Goteos en el borde de la pintura -->
+                    <div class="ps-drips" aria-hidden="true"></div>
+
+                    <!-- Pintor (imagen generada: operario vertical con rodillo) -->
+                    <div class="ps-painter" aria-hidden="true">
+                        <div class="ps-swing">
+                            <img class="ps-img" src="pintor-ultrareal-cuerda-v9.png" alt="" width="909" height="1731" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CONTACTO ==================== -->
+            <section class="contact section" id="contacto">
+                <div class="container">
+                    <div class="contact-top">
+                        <div class="reveal">
+                            <p class="contact-kicker">Hablemos de tu proyecto</p>
+                            <h2 class="contact-title">Cuéntanos<br>qué quieres<span class="accent">transformar.</span></h2>
+                        </div>
+
+                        <div class="contact-copy reveal">
+                            <p>Con la ubicación, el tipo de superficie y algunas fotos podemos orientarte mejor. Si el trabajo lo requiere, coordinamos una visita técnica.</p>
+                            <div class="contact-promises" aria-label="Beneficios de la cotización">
+                                <span>Respuesta directa</span>
+                                <span>Evaluación técnica</span>
+                                <span>Presupuesto claro</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card reveal">
+                        <div class="contact-info">
+                            <span class="contact-status"><i aria-hidden="true"></i> Atención directa</span>
+                            <h3>Hablemos por WhatsApp.</h3>
+                            <p>Cuéntanos qué necesitas pintar y envíanos fotos del lugar. Te responderá directamente nuestro equipo.</p>
+
+                            <a class="contact-wa-primary" href="https://wa.me/56986472644?text=Hola,%20quiero%20cotizar%20un%20proyecto%20de%20pintura." target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+                                <span><strong>+56 9 8647 2644</strong><small>Abrir conversación</small></span>
+                                <span class="wa-arrow" aria-hidden="true">↗</span>
+                            </a>
+
+                            <div class="contact-rows">
+                                <a class="c-row ig" href="https://www.instagram.com/pinturas_zona_sur/" target="_blank" rel="noopener noreferrer">
+                                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+                                    <span><b>@pinturas_zona_sur</b><span>Trabajos recientes</span></span>
+                                </a>
+
+                                <div class="c-row">
+                                    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                                    <span><b>Zona sur y todo Chile</b><span>Base en Angol</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-head">
+                                <span class="form-eyebrow">Cotización rápida</span>
+                                <h3>Deja el mensaje listo.</h3>
+                                <p>Danos los datos esenciales y abriremos WhatsApp con tu solicitud preparada para enviar.</p>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required autocomplete="name">
+                                </div>
+
+                                <div class="field">
+                                    <label for="ubicacion">Comuna o ciudad</label>
+                                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Angol" required autocomplete="address-level2">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="asunto">¿Qué necesitas pintar?</label>
+                                <input type="text" id="asunto" name="asunto" placeholder="Fachada, edificio, piso, demarcación…" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="mensaje">Detalles del trabajo</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Superficie aproximada, estado actual y cualquier dato útil…" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-accent">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+                                Enviar por WhatsApp
+                            </button>
+                            <p class="form-note">No guardamos tus datos; el mensaje se prepara en tu WhatsApp.</p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== NOSOTROS ==================== -->
+            <section class="about section" id="about-us">
+                <div class="container about-grid">
+                    <div class="about-media reveal">
+                        <div class="frame">
+                            <img src="wepper-WhatsApp Image 2025-08-21 at 9.47.35 PM.jpg" alt="Piso industrial con recubrimiento epóxico y acabado espejo realizado por PinturasZonaSur" loading="lazy" decoding="async">
+                        </div>
+                        <div class="about-badge">
+                            <b>+10</b>
+                            <span>Años de<br>experiencia</span>
+                        </div>
+                    </div>
+
+                    <div class="about-body reveal" style="--d:.12s">
+                        <h2 class="h-section">Oficio, precisión<br>y <span class="accent">confianza</span></h2>
+                        <p>En <strong>PinturasZonaSur</strong> nos especializamos en servicios de pintura profesional para edificios, fachadas y pisos. Nuestro equipo está comprometido con la calidad, la seguridad y la satisfacción de cada cliente.</p>
+                        <p>Utilizamos materiales de alta calidad y técnicas innovadoras para garantizar resultados duraderos y estéticamente impecables, ya sea en tu hogar, tu oficina o un proyecto a gran escala.</p>
+                        <p>Hemos pintado <strong>aeropuertos, bases aéreas, edificios de Contraloría, edificios fiscales, colegios, liceos y casas</strong>, además de demarcaciones en universidades, a lo largo de todo el país.</p>
+
+                        <ul class="about-clients">
+                            <li class="chip">Aeropuertos</li>
+                            <li class="chip">Bases aéreas</li>
+                            <li class="chip">Contraloría</li>
+                            <li class="chip">Edificios fiscales</li>
+                            <li class="chip">Colegios y liceos</li>
+                            <li class="chip">Universidades</li>
+                            <li class="chip">Hogares</li>
+                        </ul>
+
+                        <a href="#contacto" class="btn btn-ink">Trabajemos juntos</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Vista ampliada de trabajo realizado">
+            <div class="gallery-lightbox-inner">
+                <button class="gallery-lightbox-close" type="button" aria-label="Cerrar imagen">&times;</button>
+                <img src="assets/gallery/trabajo-fachada-01.webp" alt="Trabajo de pintura en fachada">
+                <p></p>
+            </div>
+        </dialog>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <a class="footer-brand" href="#inicio" aria-label="Pinturas Zona Sur — volver al inicio">
+                            <img src="assets/brand/pinturas-zona-sur-wordmark-v1.png" alt="Pinturas Zona Sur" width="1792" height="384" loading="lazy" decoding="async">
+                        </a>
+                        <p class="footer-desc">Pintura profesional para edificios, fachadas, pisos y demarcaciones. Terminaciones duraderas y trabajo seguro en cada proyecto.</p>
+                        <div class="footer-proof" aria-label="Experiencia y cobertura">
+                            <span>+10 años de experiencia</span>
+                            <span>Atención en todo Chile</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#SERVICIOS">Servicios</a></li>
+                            <li><a href="#projects">Proyectos</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                            <li><a href="#about-us">Nosotros</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Contacto directo</h4>
+                        <div class="footer-social">
+                            <a class="social-btn wa" href="https://wa.me/56986472644?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20pintura." target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg></span>
+                                <span><strong>+56 9 8647 2644</strong><small>WhatsApp · Respuesta rápida</small></span>
+                            </a>
+                            <a class="social-btn ig" href="https://www.instagram.com/pinturas_zona_sur/" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+                                <span><strong>@pinturas_zona_sur</strong><small>Instagram · Proyectos recientes</small></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>© <span id="year">2025</span> <strong>Pinturas Zona Sur.</strong> Todos los derechos reservados.</p>
+                    <p>Angol · La Araucanía · <a href="https://wa.me/56986472644" target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto</a></p>
                 </div>
             </div>
+        </footer>
 
-            <!-- Card 3 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 3</h3>
-                <div class="relative">
-                    <img src="pisopintado.webp" alt="Antes de la pintura decorativa en muro exterior" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-3">
-                    <img src="pisopintadodespues.webp" alt="Después de la pintura decorativa en muro exterior" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-3-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(3)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(3)">Después</button>
-                </div>
-            </div>
+        <!-- Botón flotante WhatsApp -->
+        <a class="fab-wa" href="https://wa.me/56986472644?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20pintura." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+            <span class="fab-tip">¿Conversamos?</span>
+        </a>
 
-            <!-- Card 4 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 4</h3>
-                <div class="relative">
-                    <img src="pinturaedificioantes.webp" alt="Antes de la pintura en edificio comercial con acabado café" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-4">
-                    <img src="pinturadeedificiodespues.webp" alt="Después de la pintura en edificio comercial con acabado café" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-4-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(4)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(4)">Después</button>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 5</h3>
-                <div class="relative">
-                    <img src="imgoptmizada/piedrasantes.webp" alt="Antes de la pintura en muro de piedra natural" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-5">
-                    <img src="imgoptmizada/piedrasdespues.webp" alt="Después de la pintura en muro de piedra natural" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-5-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(5)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(5)">Después</button>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 6</h3>
-                <div class="relative">
-                    <img src="imgoptmizada/fachadadespues2.webp" alt="Antes de la pintura en fachada de edificio moderno" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-6">
-                    <img src="imgoptmizada/fachadaantes2.webp" alt="Después de la pintura en fachada de edificio moderno" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-6-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(6)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(6)">Después</button>
-                </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 7</h3>
-                <div class="relative">
-                    <img src="imgoptmizada/antesfa.webp" alt="Antes de la pintura en fachada de edificio institucional" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-7">
-                    <img src="imgoptmizada/despuesfe.webp" alt="Después de la pintura en fachada de edificio institucional" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-7-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(7)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(7)">Después</button>
-                </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg hover:scale-105 transition-transform duration-300" style="background: url('https://www.transparenttextures.com/patterns/white-diamond.png');">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Proyecto 8</h3>
-                <div class="relative">
-                    <img src="pisocalleantes.webp" alt="Demarcación vial en calle peatonal con pintura profesional y diseño moderno en zona urbana de Chile" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300" id="image-8">
-                    <img src="pisocalledespues.webp" alt="Resultado final de la demarcación vial en calle peatonal con pintura profesional y diseño moderno en Chile" class="w-full h-48 object-cover rounded-2xl transition-opacity duration-300 hidden" id="image-8-after">
-                </div>
-                <div class="flex justify-center mt-4 gap-4">
-                    <button class="bg-sky-500 text-white px-4 py-2 rounded shadow text-sm hover:bg-sky-600" onclick="showBefore(8)">Antes</button>
-                    <button class="bg-gray-300 text-gray-800 px-4 py-2 rounded shadow text-sm hover:bg-gray-400" onclick="showAfter(8)">Después</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-					
         <script>
-    // JavaScript optimizado para alternar las imágenes
-    const imageCache = new Map();
-    
-    function showBefore(id) {
-        const beforeImg = document.getElementById(`image-${id}`);
-        const afterImg = document.getElementById(`image-${id}-after`);
-        
-        if (beforeImg && afterImg) {
-            beforeImg.classList.remove('hidden');
-            afterImg.classList.add('hidden');
-        }
-    }
+        (function () {
+            'use strict';
 
-    function showAfter(id) {
-        const beforeImg = document.getElementById(`image-${id}`);
-        const afterImg = document.getElementById(`image-${id}-after`);
-        
-        if (beforeImg && afterImg) {
-            beforeImg.classList.add('hidden');
-            afterImg.classList.remove('hidden');
-        }
-    }
-    
-    // Lazy loading avanzado con Intersection Observer
-    function initLazyLoading() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
+            /* ---------- Navbar al hacer scroll ---------- */
+            const nav = document.getElementById('navbar');
+            const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            /* ---------- Menú móvil ---------- */
+            const burger = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            burger.addEventListener('click', () => {
+                const open = document.body.classList.toggle('menu-open');
+                burger.setAttribute('aria-expanded', open);
+                burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+            });
+
+            menu.querySelectorAll('a').forEach(a =>
+                a.addEventListener('click', () => {
+                    document.body.classList.remove('menu-open');
+                    burger.setAttribute('aria-expanded', 'false');
+                })
+            );
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+                    document.body.classList.remove('menu-open');
+                    burger.setAttribute('aria-expanded', 'false');
+                    burger.focus();
+                }
+            });
+
+            /* ---------- Revelado al hacer scroll ---------- */
+            const revealObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.classList.remove('lazy-image');
-                            img.classList.add('loaded');
-                            img.removeAttribute('data-src');
-                            observer.unobserve(img);
-                        }
+                        entry.target.classList.add('in');
+                        revealObserver.unobserve(entry.target);
                     }
                 });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            /* ---------- Proceso: tarjetas apiladas ligadas al scroll ---------- */
+                let processSection = document.querySelector('.process');
+            if (processSection) {
+                let processSteps = processSection.querySelectorAll('[data-process-step]');
+                let processNodes = processSection.querySelectorAll('[data-process-node]');
+                let processTick = false;
+
+                function updateProcess() {
+                    let sectionRect = processSection.getBoundingClientRect();
+                    let viewportHeight = window.innerHeight;
+                    let activationLine = viewportHeight * 0.82;
+                    let stackStart = viewportHeight * 0.72;
+                    let stackTravel = viewportHeight * 0.48;
+                    let sectionTravel = Math.max(1, sectionRect.height - (viewportHeight * 0.45));
+                    let progress = Math.min(1, Math.max(0, (activationLine - sectionRect.top) / sectionTravel));
+                    let stepRects = [];
+
+                    for (let i = 0; i < processSteps.length; i += 1) {
+                        stepRects.push(processSteps[i].getBoundingClientRect());
+                    }
+
+                    let states = [];
+                    for (let i = 0; i < stepRects.length; i += 1) {
+                        let active = stepRects[i].top < activationLine;
+                        let overlap = 0;
+
+                        if (i < stepRects.length - 1) {
+                            overlap = Math.min(1, Math.max(0, (stackStart - stepRects[i + 1].top) / stackTravel));
+                        }
+
+                        let remainingDepth = stepRects.length - i - 1;
+                        states.push({
+                            active,
+                            scale: 1 - (overlap * (0.018 + (remainingDepth * 0.004))),
+                            dim: overlap * (0.18 + (remainingDepth * 0.04))
+                        });
+                    }
+
+                    processSection.style.setProperty('--process-progress', progress.toFixed(3));
+                    for (let i = 0; i < states.length; i += 1) {
+                        let state = states[i];
+                        processSteps[i].classList.toggle('is-active', state.active);
+                        processSteps[i].style.setProperty('--stack-scale', state.scale.toFixed(4));
+                        processSteps[i].style.setProperty('--stack-dim', state.dim.toFixed(3));
+                        processNodes[i].classList.toggle('is-active', state.active);
+                    }
+
+                    processTick = false;
+                }
+
+                function requestProcessUpdate() {
+                    if (processTick) return;
+                    processTick = true;
+                    requestAnimationFrame(updateProcess);
+                }
+
+                processSection.classList.add('process-enhanced');
+                window.addEventListener('scroll', requestProcessUpdate, { passive: true });
+                window.addEventListener('resize', requestProcessUpdate, { passive: true });
+                updateProcess();
+            }
+
+            /* ---------- Sliders Antes / Después ---------- */
+            document.querySelectorAll('.ba').forEach(ba => {
+                const range = ba.querySelector('input[type="range"]');
+                const update = () => ba.style.setProperty('--pos', range.value + '%');
+                range.addEventListener('input', update);
+                update();
             });
-            
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    }
-    
-    // Inicializar lazy loading cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', initLazyLoading);
-</script>
 
-			<script>
-				// JavaScript optimizado para el menú móvil y navegación
-				(function () {
-					const btn = document.getElementById('menu-btn');
-					const menu = document.getElementById('mobile-menu');
-					const iconOpen = document.getElementById('icon-open');
-					const iconClose = document.getElementById('icon-close');
+            /* ---------- Galería de trabajos ---------- */
+            const workGallery = document.getElementById('workGallery');
+            const galleryMore = document.getElementById('galleryMore');
+            const galleryLightbox = document.getElementById('galleryLightbox');
 
-					if (!btn || !menu) return;
-
-					// Alternar el menú móvil con mejor rendimiento
-					btn.addEventListener('click', function (e) {
-						e.preventDefault();
-						const isOpen = menu.classList.toggle('hidden');
-						menu.style.maxHeight = isOpen ? '0px' : `${menu.scrollHeight}px`;
-						menu.classList.toggle('opacity-0', isOpen);
-						menu.classList.toggle('opacity-100', !isOpen);
-						btn.setAttribute('aria-expanded', !isOpen);
-						iconOpen.classList.toggle('hidden', !isOpen);
-						iconClose.classList.toggle('hidden', isOpen);
-					});
-
-					// Cerrar el menú al hacer clic fuera de él
-					document.addEventListener('click', function (e) {
-						if (!menu.contains(e.target) && !btn.contains(e.target)) {
-							menu.classList.add('hidden');
-							menu.style.maxHeight = '0px';
-							menu.classList.add('opacity-0');
-							menu.classList.remove('opacity-100');
-							btn.setAttribute('aria-expanded', false);
-							iconOpen.classList.remove('hidden');
-							iconClose.classList.add('hidden');
-						}
-					});
-				})();
-
-				// Hide/show header on scroll optimizado
-				(function(){
-					const header = document.querySelector('header');
-					let last = window.scrollY;
-					let ticking = false;
-					
-					function onScroll(){
-						const current = window.scrollY;
-						if(current > last && current > 100){
-							// scrolling down
-							header.style.transform = 'translateY(-110%)';
-						} else {
-							// scrolling up
-							header.style.transform = 'translateY(0)';
-						}
-						last = current <= 0 ? 0 : current;
-						ticking = false;
-					}
-					
-					// Usar throttle para mejor rendimiento
-					window.addEventListener('scroll', function(){
-						if(!ticking){
-							window.requestAnimationFrame(onScroll);
-							ticking = true;
-						}
-					}, { passive: true });
-				})();
-			</script>
-
-<!-- ABOUT US SECTION (NEWLY ADDED) -->
-<section id="about-us" class="bg-gray-100 py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <!-- Imagen -->
-            <div class="relative">
-                <img src="wepper-WhatsApp Image 2025-08-21 at 9.47.35 PM.webp" alt="Piso pintado con recubrimiento profesional y acabado duradero en Chile" class="w-3/4 h-auto mx-auto rounded-2xl shadow-lg">
-            </div>
-
-            <!-- Texto descriptivo -->
-            <div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
-                    Sobre Nosotros
-                </h2>
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    En <span class="text-sky-500 font-semibold">PinturasZonaSur</span>, nos especializamos en ofrecer servicios de pintura profesional para edificios, fachadas y pisos. Con años de experiencia, nuestro equipo está comprometido con la calidad, la seguridad y la satisfacción de nuestros clientes.
-                </p>
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Utilizamos materiales de alta calidad y técnicas innovadoras para garantizar resultados duraderos y estéticamente impecables. Ya sea que necesites renovar tu hogar, tu oficina o un proyecto a gran escala, estamos aquí para ayudarte.
-                </p>
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Hemos realizado pinturas en aeropuertos, bases aéreas, edificios de Contraloría, edificios fiscales, colegios, liceos y casas. También hemos llevado a cabo demarcaciones en universidades. 
-                    Con más de 10 años de experiencia realizando trabajos de pintura a lo largo de todo el país.
-                </p>
-                <a href="#contacto" class="mt-6 inline-block bg-sky-500 text-white font-medium px-6 py-3 rounded shadow hover:bg-sky-600 transition">
-                    Contáctanos
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-            
-<!-- CONTACT SECTION (NEWLY ADDED) -->
-<section id="contacto" class="bg-gray-50 py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
-                Contáctanos
-            </h2>
-            <p class="mt-4 text-gray-600 text-lg">
-                ¿Tienes alguna consulta o necesitas un presupuesto? Completa el formulario y nos pondremos en contacto contigo.
-            </p>
-        </div>
-
-        <div class="mt-12 max-w-3xl mx-auto">
-            <form id="contactForm" class="space-y-6">
-                <!-- Nombre -->
-                <div>
-                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500">
-                </div>
-
-                <!-- Asunto -->
-                <div>
-                    <label for="asunto" class="block text-sm font-medium text-gray-700">Asunto</label>
-                    <input type="text" id="asunto" name="asunto" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500">
-                </div>
-
-                <!-- Mensaje -->
-                <div>
-                    <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500"></textarea>
-                </div>
-
-                <!-- Botón Enviar -->
-                <div class="text-center">
-                    <button type="button" onclick="sendToWhatsApp()" class="bg-sky-500 text-white px-6 py-3 rounded-lg shadow hover:bg-sky-600 transition">
-                        Enviar Mensaje
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
-
-
-
-<script>
-// Función para enviar mensaje a WhatsApp desde el formulario
-function sendToWhatsApp() {
-    const nombre = document.getElementById('nombre').value;
-    const asunto = document.getElementById('asunto').value;
-    const mensaje = document.getElementById('mensaje').value;
-    
-    if (!nombre || !asunto || !mensaje) {
-        alert('Por favor, completa todos los campos');
-        return;
-    }
-    
-    const whatsappMessage = `Hola, mi nombre es ${nombre}.\n\nAsunto: ${asunto}\n\nMensaje: ${mensaje}`;
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappURL = `https://wa.me/56986472644?text=${encodedMessage}`;
-    
-    window.open(whatsappURL, '_blank');
-}
-
-// ...existing code...
-</script>
-
-
-
-<!-- Footer optimizado con redes sociales -->
-<footer class="bg-gray-800 text-white py-12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Columna 1: Información de la empresa -->
-            <div>
-                <h3 class="text-xl font-bold text-sky-400 mb-4">PinturasZonaSur</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Más de 10 años ofreciendo servicios de pintura profesional para edificios, fachadas, pisos y más. Garantizamos calidad, seguridad y resultados duraderos en toda la zona sur de Chile.
-                </p>
-                <div class="mt-4 flex space-x-4">
-                    <span class="text-sky-400 font-semibold">📞 +56 9 8647 2644</span>
-                </div>
-            </div>
-
-            <!-- Columna 2: Enlaces rápidos -->
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
-                <ul class="space-y-3">
-                    <li><a href="#index" class="text-gray-300 hover:text-sky-400 transition-colors duration-200 flex items-center">
-                        <span class="mr-2">🏠</span>Inicio
-                    </a></li>
-                    <li><a href="#SERVICIOS" class="text-gray-300 hover:text-sky-400 transition-colors duration-200 flex items-center">
-                        <span class="mr-2">🛠️</span>Servicios
-                    </a></li>
-                    <li><a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-200 flex items-center">
-                        <span class="mr-2">📋</span>Proyectos
-                    </a></li>
-                    <li><a href="#contacto" class="text-gray-300 hover:text-sky-400 transition-colors duration-200 flex items-center">
-                        <span class="mr-2">📞</span>Contacto
-                    </a></li>
-                </ul>
-            </div>
-
-            <!-- Columna 3: Redes sociales -->
-            <div>
-                <h3 class="text-lg font-semibold mb-4 text-center md:text-left">Síguenos en Redes</h3>
-                <div class="flex flex-col space-y-4">
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/pinturas_zona_sur/" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="group flex items-center justify-center md:justify-start space-x-3 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-3 rounded-lg transition-all duration-300 hover:scale-105 transform shadow-lg">
-                        <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"/>
-                            <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"/>
-                            <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"/>
-                            <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"/>
-                            <defs>
-                                <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)">
-                                    <stop stop-color="#B13589"/>
-                                    <stop offset="0.79309" stop-color="#C62F94"/>
-                                    <stop offset="1" stop-color="#8A3AC8"/>
-                                </radialGradient>
-                                <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)">
-                                    <stop stop-color="#E0E8B7"/>
-                                    <stop offset="0.444662" stop-color="#FB8A2E"/>
-                                    <stop offset="0.71474" stop-color="#E2425C"/>
-                                    <stop offset="1" stop-color="#E2425C" stop-opacity="0"/>
-                                </radialGradient>
-                                <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)">
-                                    <stop offset="0.156701" stop-color="#406ADC"/>
-                                    <stop offset="0.467799" stop-color="#6A45BE"/>
-                                    <stop offset="1" stop-color="#6A45BE" stop-opacity="0"/>
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                        <span class="font-medium">@pinturas_zona_sur</span>
-                    </a>
-                    
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/56986472644?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20pintura." 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="group flex items-center justify-center md:justify-start space-x-3 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-all duration-300 hover:scale-105 transform shadow-lg">
-                        <svg class="w-6 h-6" viewBox="0 0 48 48" fill="currentColor">
-                            <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"/>
-                            <path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"/>
-                            <path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"/>
-                            <path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"/>
-                            <path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="font-medium">+56 9 8647 2644</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Línea divisoria y copyright -->
-        <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-            <p class="text-gray-400 text-sm">
-                © 2025 PinturasZonaSur. Todos los derechos reservados. | Servicios de pintura profesional en Chile
-            </p>
-        </div>
-    </div>
-</footer>
-
-    <!-- Botones flotantes de redes sociales -->
-    <div id="floating-buttons" class="fixed bottom-6 right-6 z-[9999] flex flex-col space-y-3" style="display: block !important;">
-        <!-- Botón flotante de WhatsApp -->
-        <a href="https://wa.me/56986472644?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios%20de%20pintura." 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="whatsapp-btn group bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 transform"
-           style="display: block !important; background-color: #25D366 !important;"
-           aria-label="Contactar por WhatsApp">
-            <svg class="w-6 h-6" viewBox="0 0 48 48" fill="currentColor">
-                <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"/>
-                <path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"/>
-                <path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"/>
-                <path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"/>
-                <path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"/>
-            </svg>
-        </a>
-
-        <!-- Botón flotante de Instagram -->
-        <a href="https://www.instagram.com/pinturas_zona_sur/" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="instagram-btn group bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 transform"
-           style="display: block !important; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%) !important;"
-           aria-label="Seguir en Instagram">
-            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"/>
-                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"/>
-                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"/>
-                <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"/>
-                <defs>
-                    <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)">
-                        <stop stop-color="#B13589"/>
-                        <stop offset="0.79309" stop-color="#C62F94"/>
-                        <stop offset="1" stop-color="#8A3AC8"/>
-                    </radialGradient>
-                    <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)">
-                        <stop stop-color="#E0E8B7"/>
-                        <stop offset="0.444662" stop-color="#FB8A2E"/>
-                        <stop offset="0.71474" stop-color="#E2425C"/>
-                        <stop offset="1" stop-color="#E2425C" stop-opacity="0"/>
-                    </radialGradient>
-                    <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)">
-                        <stop offset="0.156701" stop-color="#406ADC"/>
-                        <stop offset="0.467799" stop-color="#6A45BE"/>
-                        <stop offset="1" stop-color="#6A45BE" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
-            </svg>
-        </a>
-    </div>
-
-    <!-- Estilos adicionales para los botones flotantes -->
-    <style>
-        /* Asegurar que los botones flotantes sean visibles */
-        #floating-buttons {
-            position: fixed !important;
-            bottom: 24px !important;
-            right: 24px !important;
-            z-index: 9999 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        
-                 .whatsapp-btn, .instagram-btn {
-             display: block !important;
-             visibility: visible !important;
-             opacity: 1 !important;
-             width: 56px !important;
-             height: 56px !important;
-             padding: 16px !important;
-             border-radius: 50% !important;
-             box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
-             transition: all 0.3s ease !important;
-         }
-        
-        .whatsapp-btn:hover, .instagram-btn:hover {
-            transform: scale(1.1) !important;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
-        }
-        
-        /* Animación de pulso para los botones flotantes */
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-        
-        /* Aplicar animación de pulso a los botones flotantes */
-        .whatsapp-btn:hover, .instagram-btn:hover {
-            animation: pulse 2s infinite;
-        }
-        
-        /* Responsive para móviles */
-        @media (max-width: 768px) {
-            #floating-buttons {
-                bottom: 16px !important;
-                right: 16px !important;
-            }
-            
-            .whatsapp-btn, .instagram-btn {
-                width: 48px !important;
-                height: 48px !important;
-                padding: 12px !important;
-            }
-            
-            .whatsapp-btn svg, .instagram-btn svg {
-                width: 24px !important;
-                height: 24px !important;
-            }
-        }
-        
-        /* Asegurar que no haya conflictos con otros estilos */
-        #floating-buttons * {
-            box-sizing: border-box !important;
-        }
-    </style>
-    
-    <!-- Script para asegurar que los botones flotantes sean visibles -->
-    <script>
-        // Asegurar que los botones flotantes sean visibles
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingButtons = document.getElementById('floating-buttons');
-            if (floatingButtons) {
-                floatingButtons.style.display = 'block';
-                floatingButtons.style.visibility = 'visible';
-                floatingButtons.style.opacity = '1';
-                floatingButtons.style.zIndex = '9999';
-                
-                // Forzar la visibilidad de los botones
-                const buttons = floatingButtons.querySelectorAll('a');
-                buttons.forEach(button => {
-                    button.style.display = 'block';
-                    button.style.visibility = 'visible';
-                    button.style.opacity = '1';
+            if (workGallery && galleryMore) {
+                const galleryMoreLabel = galleryMore.querySelector('span');
+                galleryMore.addEventListener('click', () => {
+                    const expanded = workGallery.classList.toggle('is-expanded');
+                    galleryMore.setAttribute('aria-expanded', String(expanded));
+                    galleryMoreLabel.textContent = expanded ? 'Ver menos fotos' : 'Ver las 23 fotos';
                 });
             }
-        });
-        
-        // Verificar que los botones estén visibles después de que se cargue la página
-        window.addEventListener('load', function() {
-            const floatingButtons = document.getElementById('floating-buttons');
-            if (floatingButtons) {
-                console.log('Botones flotantes encontrados:', floatingButtons);
-                console.log('Display:', floatingButtons.style.display);
-                console.log('Visibility:', floatingButtons.style.visibility);
-                console.log('Opacity:', floatingButtons.style.opacity);
-                console.log('Z-index:', floatingButtons.style.zIndex);
-            } else {
-                console.log('No se encontraron los botones flotantes');
+
+            if (workGallery && galleryLightbox) {
+                const lightboxImage = galleryLightbox.querySelector('img');
+                const lightboxCaption = galleryLightbox.querySelector('p');
+                const lightboxClose = galleryLightbox.querySelector('.gallery-lightbox-close');
+
+                workGallery.querySelectorAll('.work-photo').forEach(photo => {
+                    photo.addEventListener('click', () => {
+                        const preview = photo.querySelector('img');
+                        lightboxImage.src = photo.dataset.gallerySrc;
+                        lightboxImage.alt = preview.alt;
+                        lightboxCaption.textContent = photo.dataset.galleryCaption;
+                        galleryLightbox.showModal();
+                    });
+                });
+
+                lightboxClose.addEventListener('click', () => galleryLightbox.close());
+                galleryLightbox.addEventListener('click', event => {
+                    if (event.target === galleryLightbox) galleryLightbox.close();
+                });
             }
-        });
-    </script>
-</body>
+
+            /* ---------- Enlace activo en navegación ---------- */
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            const spyObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link =>
+                            link.classList.toggle('active', link.getAttribute('href') === '#' + id)
+                        );
+                    }
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+
+            sections.forEach(s => spyObserver.observe(s));
+
+            /* ---------- Formulario → WhatsApp ---------- */
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const ubicacion = document.getElementById('ubicacion').value.trim();
+                const asunto = document.getElementById('asunto').value.trim();
+                const mensaje = document.getElementById('mensaje').value.trim();
+
+                if (!nombre || !ubicacion || !asunto || !mensaje) {
+                    form.reportValidity();
+                    return;
+                }
+
+                const texto = `Hola, mi nombre es ${nombre}.\n\nUbicación: ${ubicacion}\nTrabajo: ${asunto}\n\nDetalles: ${mensaje}`;
+                window.open(`https://wa.me/56986472644?text=${encodeURIComponent(texto)}`, '_blank');
+            });
+
+            /* ---------- Paint scene: pintor pintando con el scroll ---------- */
+            const paintScene = document.querySelector('.paint-scene');
+            if (paintScene) {
+                const sticky = paintScene.querySelector('.paint-sticky');
+                let paintTick = false;
+
+                const updatePaint = () => {
+                    const rect = paintScene.getBoundingClientRect();
+                    const total = rect.height - window.innerHeight;
+                    const p = Math.min(1, Math.max(0, -rect.top / total));
+                    sticky.style.setProperty('--p', p.toFixed(4));
+                    sticky.classList.toggle('done', p > 0.78);
+                    paintTick = false;
+                };
+
+                window.addEventListener('scroll', () => {
+                    if (!paintTick) {
+                        requestAnimationFrame(updatePaint);
+                        paintTick = true;
+                    }
+                }, { passive: true });
+                window.addEventListener('resize', updatePaint, { passive: true });
+                updatePaint();
+            }
+
+            /* ---------- Año dinámico ---------- */
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+        </script>
+    </body>
 </html>
