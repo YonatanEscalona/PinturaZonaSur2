@@ -41,13 +41,13 @@
 
         <!-- Business Information -->
         <meta property="business:contact_data:street_address" content="Servicio a domicilio">
-        <meta property="business:contact_data:locality" content="Angol">
-        <meta property="business:contact_data:region" content="La Araucanía">
+        <meta property="business:contact_data:locality" content="Los Ángeles">
+        <meta property="business:contact_data:region" content="Biobío">
         <meta property="business:contact_data:country_name" content="Chile">
         <meta property="business:contact_data:phone_number" content="+56986472644">
 
         <!-- Additional SEO Meta Tags -->
-        <meta name="keywords" content="pintura profesional, fachadas, edificios, pisos, Chile, Angol, Los Ángeles, trabajos en altura, demarcación vial, recubrimientos">
+        <meta name="keywords" content="pintura profesional, fachadas, edificios, pisos, Chile, Los Ángeles, Biobío, trabajos en altura, demarcación vial, recubrimientos">
         <meta name="author" content="PinturasZonaSur">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         <meta name="googlebot" content="index, follow">
@@ -78,11 +78,11 @@
             "telephone": "+56986472644",
             "email": "contacto@pinturaszonasur.cl",
             "description": "Pintura profesional de edificios, fachadas y pisos. Trabajos en altura y demarcación vial en la zona sur de Chile.",
-            "areaServed": ["Angol", "Los Ángeles", "La Araucanía", "Biobío", "Chile"],
+            "areaServed": ["Los Ángeles", "Biobío", "Chile"],
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Angol",
-                "addressRegion": "La Araucanía",
+                "addressLocality": "Los Ángeles",
+                "addressRegion": "Biobío",
                 "addressCountry": "CL"
             },
             "sameAs": ["https://www.instagram.com/pinturas_zona_sur/"]
@@ -711,7 +711,7 @@ body.menu-open .nav {
     position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    touch-action: none;
+    touch-action: pan-y;
     user-select: none;
     -webkit-user-select: none;
     cursor: ew-resize;
@@ -757,7 +757,9 @@ body.menu-open .nav {
     pointer-events: none;
     transition: transform 0.2s var(--ease);
 }
-.ba:hover .ba-handle { transform: translate(-50%, -50%) scale(1.08); }
+.ba:hover .ba-handle,
+.ba:focus-within .ba-handle,
+.ba.is-dragging .ba-handle { transform: translate(-50%, -50%) scale(1.08); }
 .ba-handle svg { width: 26px; height: 26px; color: var(--white); }
 
 .ba input[type="range"] {
@@ -770,6 +772,7 @@ body.menu-open .nav {
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
+    pointer-events: none;
 }
 .ba input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -2751,7 +2754,7 @@ body.menu-open .nav {
 
                                 <div class="c-row">
                                     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                                    <span><b>Zona sur y todo Chile</b><span>Base en Angol</span></span>
+                                    <span><b>Zona sur y todo Chile</b><span>Base en Los Ángeles, Biobío</span></span>
                                 </div>
                             </div>
                         </div>
@@ -2771,7 +2774,7 @@ body.menu-open .nav {
 
                                 <div class="field">
                                     <label for="ubicacion">Comuna o ciudad</label>
-                                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Angol" required autocomplete="address-level2">
+                                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Los Ángeles" required autocomplete="address-level2">
                                 </div>
                             </div>
 
@@ -2881,7 +2884,7 @@ body.menu-open .nav {
 
                 <div class="footer-bottom">
                     <p>© <span id="year">2025</span> <strong>Pinturas Zona Sur.</strong> Todos los derechos reservados.</p>
-                    <p>Angol · La Araucanía · <a href="https://wa.me/56986472644" target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto</a></p>
+                    <p>Los Ángeles · Biobío · <a href="https://wa.me/56986472644" target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto</a></p>
                 </div>
             </div>
         </footer>
@@ -3004,9 +3007,79 @@ body.menu-open .nav {
             /* ---------- Sliders Antes / Después ---------- */
             document.querySelectorAll('.ba').forEach(ba => {
                 const range = ba.querySelector('input[type="range"]');
-                const update = () => ba.style.setProperty('--pos', range.value + '%');
-                range.addEventListener('input', update);
-                update();
+                let activePointer = null;
+                let startX = 0;
+                let startY = 0;
+                let dragging = false;
+
+                function updateFromRange() {
+                    ba.style.setProperty('--pos', range.value + '%');
+                }
+
+                function updateFromPointer(clientX) {
+                    const bounds = ba.getBoundingClientRect();
+                    if (!bounds.width) return;
+
+                    const position = ((clientX - bounds.left) / bounds.width) * 100;
+                    range.value = Math.min(100, Math.max(0, position)).toFixed(1);
+                    updateFromRange();
+                }
+
+                function finishDrag(event) {
+                    if (event.pointerId !== activePointer) return;
+
+                    if (ba.hasPointerCapture(event.pointerId)) {
+                        ba.releasePointerCapture(event.pointerId);
+                    }
+
+                    activePointer = null;
+                    dragging = false;
+                    ba.classList.remove('is-dragging');
+                }
+
+                range.addEventListener('input', updateFromRange);
+
+                ba.addEventListener('pointerdown', event => {
+                    if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+                    activePointer = event.pointerId;
+                    startX = event.clientX;
+                    startY = event.clientY;
+                    dragging = false;
+                    range.focus({ preventScroll: true });
+                });
+
+                ba.addEventListener('pointermove', event => {
+                    if (event.pointerId !== activePointer) return;
+
+                    const distanceX = event.clientX - startX;
+                    const distanceY = event.clientY - startY;
+
+                    if (!dragging) {
+                        if (Math.abs(distanceX) < 7 && Math.abs(distanceY) < 7) return;
+
+                        if (Math.abs(distanceY) > Math.abs(distanceX)) {
+                            activePointer = null;
+                            return;
+                        }
+
+                        dragging = true;
+                        ba.classList.add('is-dragging');
+                        ba.setPointerCapture(event.pointerId);
+                    }
+
+                    updateFromPointer(event.clientX);
+                });
+
+                ba.addEventListener('pointerup', event => {
+                    if (event.pointerId === activePointer && !dragging) {
+                        updateFromPointer(event.clientX);
+                    }
+
+                    finishDrag(event);
+                });
+                ba.addEventListener('pointercancel', finishDrag);
+                updateFromRange();
             });
 
             /* ---------- Galería de trabajos ---------- */
